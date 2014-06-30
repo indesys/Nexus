@@ -3,30 +3,35 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCharacters extends Migration {
+class CreateUsersCharacters extends Migration {
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
 	public function up()
 	{
 		Schema::create('users', function(Blueprint $table)
 		{
-			$table->bigIncrements('id');
-			$table->string('name');
-			$table->string('email');
+			$table->bigIncrements('id'); // renamed user_id to id
+			$table->string('username', 20);
+			$table->string('password', 96);
+			$table->string('email'); // let email be 255 characters
+			$table->string('name'); // let name be 255 characters
+			$table->string('aim', 50)->nullable();
+			$table->string('yim', 50)->nullable();
+			$table->string('msn', 50)->nullable();
+			$table->string('icq', 15)->nullable();
+			$table->datetime('join_date');
+			$table->datetime('leave_date')->nullable();
+			$table->datetime('last_login')->nullable();
+			$table->boolean('active')->default((int) true);
 			$table->timestamps();
 			$table->softDeletes();
 		});
 
 		Schema::create('characters', function(Blueprint $table)
 		{
-			$table->bigIncrements('id');
+			$table->bigIncrements('id'); // changed char_id to id
 			$table->bigInteger('user_id')->unsigned();
-			$table->string('name');
 			$table->integer('rank_id')->default(0);
+			$table->string('name'); // for something like this, I don't think it's necessary to have the name split
 			$table->timestamps();
 			$table->softDeletes();
 		});
@@ -35,6 +40,8 @@ class CreateCharacters extends Migration {
 		{
 			$table->increments('id');
 			$table->string('name');
+			$table->string('short_name', 50);
+			$table->integer('order')->default(99);
 			$table->string('image');
 			$table->timestamps();
 			$table->softDeletes();
@@ -47,6 +54,7 @@ class CreateCharacters extends Migration {
 			$table->string('name');
 			$table->text('description')->nullable();
 			$table->integer('order')->default(99);
+			$table->integer('open')->default(1);
 			$table->timestamps();
 			$table->softDeletes();
 		});
@@ -57,17 +65,14 @@ class CreateCharacters extends Migration {
 			$table->string('name');
 			$table->text('description')->nullable();
 			$table->integer('order')->default(99);
-			$table->boolean('admin')->default((int) false);
+			$table->string('image')->nullable();
+			$table->string('url')->nullable();
+			$table->boolean('admin')->default((int) false); // be as generic as possible; others may not call it council
 			$table->timestamps();
 			$table->softDeletes();
 		});
 	}
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
 	public function down()
 	{
 		Schema::dropIfExists('users');
