@@ -1,0 +1,29 @@
+{
+	"require": {
+		"laravel/framework": "4.2.*"
+	},
+
+	"require-dev": {
+		"raveren/kint": "dev-master",
+		"fzaninotto/faker": "*"
+	},
+
+	"autoload": {
+		"psr-4": {
+			"Nexus\\": "Nexus\\Web\\"
+		},
+
+		"classmap": [
+			"Nexus/database/migrations",
+			"Nexus/database/seeds"
+		]
+	},
+
+	"config": {
+		"preferred-install": "dist",
+		"process-timeout": 500
+	},
+
+	"minimum-stability": "stable",
+	"prefer-stable": true
+}
