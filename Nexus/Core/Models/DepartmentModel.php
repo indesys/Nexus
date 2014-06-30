@@ -6,18 +6,19 @@ class DepartmentModel extends \Eloquent {
 
     use SoftDeletingTrait;
 
+    protected $primaryKey = 'dept_id' ;
     protected $table = 'departments';
-    protected $fillable = ['name', 'description', 'order', 'admin'];
+    protected $fillable = ['dept_name', 'dept_order', 'dept_image', 'dept_website', 'dept_is_council'];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public function positions()
     {
-        return $this->hasMany('PositionModel', 'dept_id');
+        return $this->hasMany('PositionModel', 'dept_id')->orderBy('position_order');
     }
 
-    public function scopeAdmin($query)
+    public function scopeDeptIsCouncil($query)
     {
-        $query->where('admin', (int) true);
+        $query->where('dept_is_council', (int) true);
     }
 
 }

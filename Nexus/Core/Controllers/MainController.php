@@ -1,31 +1,129 @@
 <?php namespace Nexus\Core\Controllers;
 
-use View;
+use Controller,
+    View,
+    MessageModel,
+    SettingModel,
+    MenuModel,
+    NewsModel;
 
-class MainController extends \Controller {
+class MainController extends Controller {
 
     public function index()
     {
+        // Set the page class
         $page_class = 'main';
-        /*
+        
         // Get a listing of all the messages
-        $messages = MessagesModel::find(1);
+        $messages = MessageModel::find(1);
 
         // Get a listing of all the globals
-        $setting = SettingsModel::find(1);
+        $setting = SettingModel::find(1);
 
         // Query the database to set the subnavigation menu
         $menu_items = MenuModel::where('submenu_class','=',$page_class)
                                 ->where('submenu_active','=','1')
                                 ->orderBy('submenu_order','ASC')
-                                ->get();*/
+                                ->get();
 
-        //return View::make('pages.main.index', compact('messages', 'setting', 'menu_items', 'page_class'));
+        // Make the View
         return View::make('pages.main.index')
             ->with('page_class', $page_class)
-            ->with('messages', '')
-            ->with('setting', '')
-            ->with('menu_items', '');
+            ->with('messages', $messages)
+            ->with('setting', $setting)
+            ->with('menu_items', $menu_items);
+    }
+
+    public function about_us()
+    {
+        // Set the page class
+        $page_class = 'main';
+        
+        // Get a listing of all the messages
+        $messages = MessageModel::find(1);
+
+        // Get a listing of all the globals
+        $setting = SettingModel::find(1);
+
+        // Query the database to set the subnavigation menu
+        $menu_items = MenuModel::where('submenu_class','=',$page_class)
+                                ->where('submenu_active','=','1')
+                                ->orderBy('submenu_order','ASC')
+                                ->get();
+
+        // Make the View
+        return View::make('pages.main.about_us')
+            ->with('page_class', $page_class)
+            ->with('messages', $messages)
+            ->with('setting', $setting)
+            ->with('menu_items', $menu_items);
+    }
+
+    public function news()
+    {
+        // Set the page class
+        $page_class = 'main';
+        
+        // Get a listing of all the messages
+        $news_items = NewsModel::where('news_active','=','1')
+                                ->join('news_cats', 'news.news_category', '=', 'news_cats.news_cat_id')
+                                ->take(10)
+                                ->orderBy('news_posted','DESC')
+                                ->get();
+
+        // Query the database to set the subnavigation menu
+        $menu_items = MenuModel::where('submenu_class','=',$page_class)
+                                ->where('submenu_active','=','1')
+                                ->orderBy('submenu_order','ASC')
+                                ->get();
+
+        // Make the View
+        return View::make('pages.main.news')
+            ->with('page_class', $page_class)
+            ->with('news_items', $news_items)
+            ->with('menu_items', $menu_items);
+    }
+
+    public function faqs()
+    {
+        // Set the page class
+        $page_class = 'main';
+        
+        // Get a listing of all the messages
+        $messages = MessageModel::find(1);
+
+        // Query the database to set the subnavigation menu
+        $menu_items = MenuModel::where('submenu_class','=',$page_class)
+                                ->where('submenu_active','=','1')
+                                ->orderBy('submenu_order','ASC')
+                                ->get();
+
+        // Make the View
+        return View::make('pages.main.faqs')
+            ->with('page_class', $page_class)
+            ->with('messages', $messages)
+            ->with('menu_items', $menu_items);
+    }
+
+    public function credits()
+    {
+        // Set the page class
+        $page_class = 'main';
+        
+        // Get a listing of all the messages
+        $messages = MessageModel::find(1);
+
+        // Query the database to set the subnavigation menu
+        $menu_items = MenuModel::where('submenu_class','=',$page_class)
+                                ->where('submenu_active','=','1')
+                                ->orderBy('submenu_order','ASC')
+                                ->get();
+
+        // Make the View
+        return View::make('pages.main.credits')
+            ->with('page_class', $page_class)
+            ->with('messages', $messages)
+            ->with('menu_items', $menu_items);
     }
 
 }

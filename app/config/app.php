@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug' => true,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -189,11 +189,19 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 
+		'SettingModel'	=>	'Nexus\Core\Models\SettingModel',
+		'MessageModel'	=>	'Nexus\Core\Models\MessageModel',
+		'MenuModel'	=>	'Nexus\Core\Models\MenuModel',
+		'NewsModel'	=>	'Nexus\Core\Models\NewsModel',
 		'CharacterModel' => 'Nexus\Core\Models\CharacterModel',
 		'DepartmentModel' => 'Nexus\Core\Models\DepartmentModel',
 		'PositionModel' => 'Nexus\Core\Models\PositionModel',
 		'RankModel' => 'Nexus\Core\Models\RankModel',
 		'ShipModel' => 'Nexus\Core\Models\ShipModel',
+		'ShipStatusModel' => 'Nexus\Core\Models\ShipStatusModel',
+		'ShipClassModel' => 'Nexus\Core\Models\ShipClassModel',
+		'NamePrefixModel' => 'Nexus\Core\Models\NamePrefixModel',
+		'RegistryPrefixModel' => 'Nexus\Core\Models\RegistryPrefixModel',
 		'TaskForceModel' => 'Nexus\Core\Models\TaskForceModel',
 		'TaskGroupModel' => 'Nexus\Core\Models\TaskGroupModel',
 		'UserModel' => 'Nexus\Core\Models\UserModel',

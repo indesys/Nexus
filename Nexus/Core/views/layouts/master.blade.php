@@ -12,12 +12,12 @@
 
         <!-- MAIN HEADER -->
         <div id="headwrapper">
-            {{ HTML::image('assets/images/lf-banner.jpg', 'Lambda Fleet Banner') }}
+            {{ HTML::image('assets/images/site-banner.jpg', 'Fleet Banner') }}
         </div>
 
         <!-- MENU UNDER HEADER -->
         <div id="main_nav">
-            @include('layouts.mainmenu')
+            @include('partials.mainnav')
         </div>
 
         <!-- MAIN CONTENT DISPLAY -->
@@ -40,7 +40,7 @@
             <!-- FOOTER -->
             <div id="footer">
                 <div class="copyright">
-                    &copy;{{ date('Y') }} &nbsp;all rights reserved&nbsp;|&nbsp;Powered by LAMBDA&nbsp;|&nbsp;{{ HTML::linkAction('credits','Site Credits') }}
+                    &copy;{{ date('Y') }} &nbsp;all rights reserved&nbsp;|&nbsp;Powered by {{ HTML::image('assets/images/poweredby.jpg', 'Nexus Fleet System') }}&nbsp;|&nbsp;{{ HTML::linkAction('credits','Site Credits') }}
                 </div>
             </div>
 
