@@ -1,1 +1,7 @@
-/vendor
+.DS_Store
+
+.env.local.php
+.env.php
+bootstrap/compiled.php
+vendor
+composer.lock
