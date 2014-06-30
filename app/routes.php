@@ -11,12 +11,10 @@
 |
 */
 
-Route::get('/', function()
-{
-	$depts = DepartmentModel::admin()->orderBy('order', 'asc')->get();
-
-	return View::make('staff')->with('depts', $depts);
-});
+Route::get('/', [
+	'as' => 'home',
+	'uses' => 'Nexus\Controllers\MainController@index'
+]);
 
 Route::get('taskforces', function()
 {
