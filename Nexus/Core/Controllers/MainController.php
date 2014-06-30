@@ -21,7 +21,11 @@ class MainController extends \Controller {
                                 ->get();*/
 
         //return View::make('pages.main.index', compact('messages', 'setting', 'menu_items', 'page_class'));
-        return View::make('pages.main.index');
+        return View::make('pages.main.index')
+            ->with('page_class', $page_class)
+            ->with('messages', '')
+            ->with('setting', '')
+            ->with('menu_items', '');
     }
 
 }
