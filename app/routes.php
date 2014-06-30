@@ -13,12 +13,5 @@
 
 Route::get('/', [
 	'as' => 'home',
-	'uses' => 'Nexus\Controllers\MainController@index'
+	'uses' => 'Nexus\Core\Controllers\MainController@index'
 ]);
-
-Route::get('taskforces', function()
-{
-	$taskforces = TaskForceModel::all();
-
-	return View::make('taskforces')->with('taskforces', $taskforces);
-});

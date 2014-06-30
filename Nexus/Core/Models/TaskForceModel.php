@@ -1,4 +1,4 @@
-<?php namespace Nexus\Models;
+<?php namespace Nexus\Core\Models;
 
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 

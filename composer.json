@@ -10,7 +10,8 @@
 
 	"autoload": {
 		"psr-4": {
-			"Nexus\\": "Nexus\\Web\\"
+			"Nexus\\Core\\": "Nexus\\Core\\",
+			"Nexus\\Wiki": "Nexus\\Wiki\\"
 		},
 
 		"classmap": [

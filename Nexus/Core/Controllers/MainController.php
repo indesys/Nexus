@@ -1,4 +1,4 @@
-<?php namespace Nexus\Controllers;
+<?php namespace Nexus\Core\Controllers;
 
 use View;
 

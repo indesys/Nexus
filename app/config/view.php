@@ -15,7 +15,7 @@ return array(
 
 	'paths' => array(
 		__DIR__.'/../views',
-		__DIR__.'/../../Nexus/Web/Views'
+		__DIR__.'/../../Nexus/Core/views'
 	),
 
 	/*

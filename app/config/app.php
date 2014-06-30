@@ -189,14 +189,14 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 
-		'CharacterModel' => 'Nexus\Models\CharacterModel',
-		'DepartmentModel' => 'Nexus\Models\DepartmentModel',
-		'PositionModel' => 'Nexus\Models\PositionModel',
-		'RankModel' => 'Nexus\Models\RankModel',
-		'ShipModel' => 'Nexus\Models\ShipModel',
-		'TaskForceModel' => 'Nexus\Models\TaskForceModel',
-		'TaskGroupModel' => 'Nexus\Models\TaskGroupModel',
-		'UserModel' => 'Nexus\Models\UserModel',
+		'CharacterModel' => 'Nexus\Core\Models\CharacterModel',
+		'DepartmentModel' => 'Nexus\Core\Models\DepartmentModel',
+		'PositionModel' => 'Nexus\Core\Models\PositionModel',
+		'RankModel' => 'Nexus\Core\Models\RankModel',
+		'ShipModel' => 'Nexus\Core\Models\ShipModel',
+		'TaskForceModel' => 'Nexus\Core\Models\TaskForceModel',
+		'TaskGroupModel' => 'Nexus\Core\Models\TaskGroupModel',
+		'UserModel' => 'Nexus\Core\Models\UserModel',
 
 	),
 
