@@ -5,10 +5,9 @@ class TaskForceSeeder extends Seeder {
     public function run()
     {
         $taskforces = [
-            ['name' => 'Independent Fleet Operations'],
-            ['name' => 'Task Force 21'],
-            ['name' => 'Task Force 47'],
-            ['name' => 'Task Force 72'],
+            ['number' => '1', 'name' => 'Independent Fleet Operations'],
+            ['number' => '27', 'name' => 'Tethys'],
+            ['number' => '51', 'name' => 'Cronus'],
         ];
 
         foreach ($taskforces as $tf)
