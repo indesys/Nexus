@@ -10,6 +10,7 @@ class CreateFleet extends Migration {
 		Schema::create('task_forces', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->integer('number');
 			$table->string('name');
 			$table->string('image')->nullable();
 			$table->string('url')->nullable();
@@ -21,6 +22,7 @@ class CreateFleet extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('task_force_id')->unsigned();
+			$table->string('group_code');
 			$table->string('name');
 			$table->string('image')->nullable();
 			$table->string('url')->nullable();
@@ -91,6 +93,7 @@ class CreateFleet extends Migration {
 		Schema::dropIfExists('prefix_name');
 		Schema::dropIfExists('prefix_reg');
 		Schema::dropIfExists('ship_classes');
+		Schema::dropIfExists('ship_status');
 		Schema::dropIfExists('manifests');
 	}
 

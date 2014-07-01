@@ -59,6 +59,16 @@ class CreateUsersCharacters extends Migration {
 			$table->softDeletes();
 		});
 
+		Schema::create('awards', function(Blueprint $table)
+		{
+			$table->increments('id');
+			$table->string('name');
+			$table->text('description')->nullable();
+			$table->string('image');
+			$table->timestamps();
+			$table->softDeletes();
+		});
+
 		Schema::create('departments', function(Blueprint $table)
 		{
 			$table->increments('id');
@@ -77,9 +87,10 @@ class CreateUsersCharacters extends Migration {
 	{
 		Schema::dropIfExists('users');
 		Schema::dropIfExists('characters');
-		Schema::dropIfExists('departments');
-		Schema::dropIfExists('positions');
 		Schema::dropIfExists('ranks');
+		Schema::dropIfExists('positions');
+		Schema::dropIfExists('awards');
+		Schema::dropIfExists('departments');
 	}
 
 }

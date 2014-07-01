@@ -207,7 +207,7 @@ class CreateClassesSpecs extends Migration {
 		Schema::dropIfExists('specs_classes_shuttle');
 		Schema::dropIfExists('specs_classes_fighter');
 		Schema::dropIfExists('specs_classes_transport');
-		Schema::dropIfExists('specs_classes_category');
+		Schema::dropIfExists('specs_classes_categories');
 		Schema::dropIfExists('specs_defenses');
 		Schema::dropIfExists('specs_phasers');
 		Schema::dropIfExists('specs_torpedoes');
