@@ -15,17 +15,7 @@ class FleetController extends BaseController {
 		parent::__construct();
 
 		// Set the page class
-		$this->pageClass = "fleet";
-
-		// Get the controller object
-		$me = $this;
-
-		// Before filter to set up the subnav
-		$this->beforeFilter(function() use (&$me)
-		{
-			View::share('menu_items', MenuModel::getItems($me->pageClass));
-			View::share('page_class', $me->pageClass);
-		});
+		static::$pageClass = "fleet";
 	}
 
 	public function index()
