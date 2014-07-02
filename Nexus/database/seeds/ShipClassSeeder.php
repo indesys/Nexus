@@ -25,7 +25,7 @@ class ShipClassSeeder extends Seeder {
 
         foreach ($classes as $class)
         {
-            ShipClassModel::create($class);
+            SpecClassShipModel::create($class);
         }
     }
 

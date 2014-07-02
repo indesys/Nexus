@@ -41,7 +41,7 @@ class CreateUsersCharacters extends Migration {
 			$table->increments('id');
 			$table->string('name');
 			$table->string('short_name', 50);
-			$table->integer('rnk_order')->default(99); // 'order' gave a flag saying it was protected by MySQL
+			$table->integer('sequence')->default(99); // 'order' gave a flag saying it was protected by MySQL
 			$table->string('image');
 			$table->timestamps();
 			$table->softDeletes();
@@ -53,7 +53,7 @@ class CreateUsersCharacters extends Migration {
 			$table->integer('dept_id')->unsigned();
 			$table->string('name');
 			$table->text('description')->nullable();
-			$table->integer('pos_order')->default(99); // 'order' gave a flag saying it was protected by MySQL
+			$table->integer('sequence')->default(99); // 'order' gave a flag saying it was protected by MySQL
 			$table->integer('open')->default(1);
 			$table->timestamps();
 			$table->softDeletes();
@@ -74,7 +74,7 @@ class CreateUsersCharacters extends Migration {
 			$table->increments('id');
 			$table->string('name');
 			$table->text('description')->nullable();
-			$table->integer('dpt_order')->default(99); // 'order' gave a flag saying it was protected by MySQL
+			$table->integer('sequence')->default(99); // 'order' gave a flag saying it was protected by MySQL
 			$table->string('image')->nullable();
 			$table->string('url')->nullable();
 			$table->boolean('admin')->default((int) false); // be as generic as possible; others may not call it council

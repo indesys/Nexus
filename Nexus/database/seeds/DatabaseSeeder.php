@@ -6,6 +6,9 @@ class DatabaseSeeder extends Seeder {
     {
         Eloquent::unguard();
 
+        $this->call('MessageSeeder');
+        $this->call('SettingSeeder');
+
         $this->call('DepartmentSeeder');
         $this->call('PositionSeeder');
         $this->call('RankSeeder');
