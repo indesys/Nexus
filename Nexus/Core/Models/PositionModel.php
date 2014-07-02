@@ -8,7 +8,7 @@ class PositionModel extends Eloquent {
     use SoftDeletingTrait;
 
     protected $table = 'positions';
-    protected $fillable = ['dept_id', 'name', 'description', 'pos_order', 'open'];
+    protected $fillable = ['dept_id', 'name', 'description', 'sequence', 'open'];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public function characters()
