@@ -1,6 +1,8 @@
 <?php namespace Nexus\Core\Controllers;
 
-use Controller;
+use View,
+    MenuModel,
+    Controller;
 
 abstract class BaseController extends Controller {
 

@@ -15,7 +15,7 @@ class FleetController extends BaseController {
 		parent::__construct();
 
 		// Set the page class
-		$this->pageClass = 'fleet';
+		$this->pageClass = "fleet";
 
 		// Get the controller object
 		$me = $this;
@@ -23,36 +23,28 @@ class FleetController extends BaseController {
 		// Before filter to set up the subnav
 		$this->beforeFilter(function() use (&$me)
 		{
-			$me->subnav = MenuModel::getItems($me->pageClass);
+			View::share('menu_items', MenuModel::getItems($me->pageClass));
+			View::share('page_class', $me->pageClass);
 		});
 	}
 
 	public function index()
     {
-		return View::make('pages.fleet.index')
-			->with('menu_items', $this->subnav)
-			->with('page_class', $this->pageClass);
+		return View::make('pages.fleet.index');
     }
 
-	public function ship_listing()
+	public function ships()
     {
-		$page_class = 'fleet';
-
-        // Query the database to set the subnavigation menu
-        $menu_items = MenuModel::where('pg_class','=',$page_class)
-                                ->where('active','=','1')
-                                ->orderBy('sequence','ASC')
-                                ->get();
-        // Retrieve all the task forces minus the surplus depot holding bay
+		// Retrieve all the task forces minus the surplus depot holding bay
 		$task_forces = TaskForceModel::where('name','!=','Task Force 99')
-								->orderBy('name','ASC')
-								->get();
+			->orderBy('name','ASC')
+			->get();
 
 		// Make the View
 		return View::make('pages.fleet.ship_listing')
-			->with('task_forces',$task_forces)
-			->with('menu_items',$menu_items)
-			->with('page_class',$page_class);
+			->with('task_forces', $task_forces)
+			->with('menu_items', $this->subnav)
+			->with('page_class', $this->pageClass);
     }
 
 	public function tf_ships($id)

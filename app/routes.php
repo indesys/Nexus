@@ -53,9 +53,9 @@ Route::group(['prefix' => 'fleet', 'namespace' => 'Nexus\Core\Controllers'], fun
 		'as' => 'fleet',
 		'uses' => 'FleetController@index'
 	]);
-	Route::get('ship_listing', [
-		'as' => 'ship_listing',
-		'uses' => 'FleetController@ship_listing'
+	Route::get('ships', [
+		'as' => 'ships',
+		'uses' => 'FleetController@ships'
 	]);
 	Route::get('tf_ships/{id?}', [
 		'as' => 'tf_ships',
