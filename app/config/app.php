@@ -189,20 +189,27 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 
-		'SettingModel'	=>	'Nexus\Core\Models\SettingModel',
-		'MessageModel'	=>	'Nexus\Core\Models\MessageModel',
-		'MenuModel'	=>	'Nexus\Core\Models\MenuModel',
-		'NewsModel'	=>	'Nexus\Core\Models\NewsModel',
-		'CharacterModel' => 'Nexus\Core\Models\CharacterModel',
-		'DepartmentModel' => 'Nexus\Core\Models\DepartmentModel',
-		'PositionModel' => 'Nexus\Core\Models\PositionModel',
-		'RankModel' => 'Nexus\Core\Models\RankModel',
-		'ShipModel' => 'Nexus\Core\Models\ShipModel',
-		'ShipStatusModel' => 'Nexus\Core\Models\ShipStatusModel',
-		'SpecClassShipModel' => 'Nexus\Core\Models\SpecClassShipModel',
-		'TaskForceModel' => 'Nexus\Core\Models\TaskForceModel',
-		'TaskGroupModel' => 'Nexus\Core\Models\TaskGroupModel',
-		'UserModel' => 'Nexus\Core\Models\UserModel',
+		'BaseController'	=> 'Nova\Core\Controllers\BaseController',
+		'Date'				=> 'Carbon\Carbon',
+		'Model'				=> 'Nexus\Extensions\Laravel\Database\Eloquent\Model',
+
+		/**
+		 * Models
+		 */
+		'SettingModel'			=> 'Nexus\Core\Models\SettingModel',
+		'MessageModel'			=> 'Nexus\Core\Models\MessageModel',
+		'MenuModel'				=> 'Nexus\Core\Models\MenuModel',
+		'NewsModel'				=> 'Nexus\Core\Models\NewsModel',
+		'CharacterModel'		=> 'Nexus\Core\Models\CharacterModel',
+		'DepartmentModel'		=> 'Nexus\Core\Models\DepartmentModel',
+		'PositionModel'			=> 'Nexus\Core\Models\PositionModel',
+		'RankModel'				=> 'Nexus\Core\Models\RankModel',
+		'ShipModel'				=> 'Nexus\Core\Models\ShipModel',
+		'ShipStatusModel'		=> 'Nexus\Core\Models\ShipStatusModel',
+		'SpecClassShipModel'	=> 'Nexus\Core\Models\SpecClassShipModel',
+		'TaskForceModel'		=> 'Nexus\Core\Models\TaskForceModel',
+		'TaskGroupModel'		=> 'Nexus\Core\Models\TaskGroupModel',
+		'UserModel'				=> 'Nexus\Core\Models\UserModel',
 
 	),
 
