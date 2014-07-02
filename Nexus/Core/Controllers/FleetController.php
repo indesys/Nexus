@@ -1,17 +1,12 @@
-<?php namespace Nexus\Core\Controllers ;
+<?php namespace Nexus\Core\Controllers;
 
-use Controller,
-	View,
+use View,
 	Request,
-	DB,
 	MenuModel,
 	MessageModel,
-	SettingModel,
+	BaseController,
 	TaskForceModel,
-	PositionModel,
-	ShipModel,
-	DepartmentModel,
-	BaseController;
+	DepartmentModel;
 
 class FleetController extends BaseController {
 
