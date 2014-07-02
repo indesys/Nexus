@@ -13,8 +13,6 @@ class ShipSeeder extends Seeder {
             ['task_group_id' => 3, 'name' => 'IKV QIch Tr'],
             ['task_group_id' => 3, 'name' => 'CDS Akmar'],
 
-
-
             ['task_group_id' => 4, 'name' => 'Starbase 348'],
             ['task_group_id' => 4, 'name' => 'USS Tripoli'],
 
@@ -27,8 +25,6 @@ class ShipSeeder extends Seeder {
             ['task_group_id' => 6, 'name' => 'USS Archimedes'],
             ['task_group_id' => 6, 'name' => 'USS Endeavor'],
             ['task_group_id' => 6, 'name' => 'USS Firebird'],
-
-
 
             ['task_group_id' => 7, 'name' => 'Starbase 80'],
             ['task_group_id' => 7, 'name' => 'USS Nimitz'],
