@@ -2,17 +2,6 @@
 
 /*
 |--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
-
-/*
-|--------------------------------------------------------------------------
 | Routes for the "Main" section
 |--------------------------------------------------------------------------
 |
@@ -26,18 +15,30 @@ Route::get('credits', [
 	'as' => 'credits',
 	'uses' => 'Nexus\Core\Controllers\MainController@credits'
 ]);
-Route::get('main/about_us', [
-	'as' => 'about_us',
-	'uses' => 'Nexus\Core\Controllers\MainController@about_us'
+Route::get('join', [
+	'as' => 'join',
+	'uses' => 'Nexus\Core\Controllers\MainController@join'
 ]);
-Route::get('main/news', [
-	'as' => 'news',
-	'uses' => 'Nexus\Core\Controllers\MainController@news'
-]);
-Route::get('main/faqs', [
-	'as' => 'faqs',
-	'uses' => 'Nexus\Core\Controllers\MainController@faqs'
-]);
+
+Route::group(['prefix' => 'main', 'namespace' => 'Nexus\Core\Controllers'], function()
+{
+	Route::get('about_us', [
+		'as' => 'about_us',
+		'uses' => 'MainController@about'
+	]);
+	Route::get('news', [
+		'as' => 'news',
+		'uses' => 'MainController@news'
+	]);
+	Route::get('faqs', [
+		'as' => 'faqs',
+		'uses' => 'MainController@faqs'
+	]);
+	Route::get('join_us', [
+		'as' => 'join_us',
+		'uses' => 'MainController@join'
+	]);
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -46,35 +47,37 @@ Route::get('main/faqs', [
 |
 */
 
-Route::get('fleet', [
-	'as' => 'fleet',
-	'uses' => 'Nexus\Core\Controllers\FleetController@index'
-]);
-Route::get('fleet/ship_listing', [
-	'as' => 'ship_listing',
-	'uses' => 'Nexus\Core\Controllers\FleetController@ship_listing'
-]);
-Route::get('fleet/tf_ships/{id?}', [
-	'as' => 'tf_ships',
-	'uses' => 'Nexus\Core\Controllers\FleetController@tf_ships'
-]);
-Route::get('fleet/task_forces', [
-	'as' => 'task_forces',
-	'uses' => 'Nexus\Core\Controllers\FleetController@task_forces'
-]);
-Route::get('fleet/rules', [
-	'as' => 'rules',
-	'uses' => 'Nexus\Core\Controllers\FleetController@rules'
-]);
-Route::get('fleet/departments', [
-	'as' => 'departments',
-	'uses' => 'Nexus\Core\Controllers\FleetController@departments'
-]);
-Route::get('fleet/command_staff', [
-	'as' => 'command_staff',
-	'uses' => 'Nexus\Core\Controllers\FleetController@command_staff'
-]);
-
+Route::group(['prefix' => 'fleet', 'namespace' => 'Nexus\Core\Controllers'], function()
+{
+	Route::get('/', [
+		'as' => 'fleet',
+		'uses' => 'FleetController@index'
+	]);
+	Route::get('ship_listing', [
+		'as' => 'ship_listing',
+		'uses' => 'FleetController@ship_listing'
+	]);
+	Route::get('tf_ships/{id?}', [
+		'as' => 'tf_ships',
+		'uses' => 'FleetController@tf_ships'
+	]);
+	Route::get('task_forces', [
+		'as' => 'task_forces',
+		'uses' => 'FleetController@task_forces'
+	]);
+	Route::get('rules', [
+		'as' => 'rules',
+		'uses' => 'FleetController@rules'
+	]);
+	Route::get('departments', [
+		'as' => 'departments',
+		'uses' => 'FleetController@departments'
+	]);
+	Route::get('command_staff', [
+		'as' => 'command_staff',
+		'uses' => 'FleetController@command_staff'
+	]);
+});
 
 /*
 |--------------------------------------------------------------------------

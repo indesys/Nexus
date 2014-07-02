@@ -13,7 +13,7 @@ class MainController extends Controller {
     {
         // Set the page class
         $page_class = 'main';
-        
+
         // Get a listing of all the messages
         $messages = MessageModel::find(1);
 
@@ -34,11 +34,11 @@ class MainController extends Controller {
             ->with('menu_items', $menu_items);
     }
 
-    public function about_us()
+    public function about()
     {
         // Set the page class
         $page_class = 'main';
-        
+
         // Get a listing of all the messages
         $messages = MessageModel::find(1);
 
@@ -63,7 +63,7 @@ class MainController extends Controller {
     {
         // Set the page class
         $page_class = 'main';
-        
+
         // Get a listing of all the messages
         $news_items = NewsModel::where('activated','=','1')
                                 ->join('news_categories', 'news.category_id', '=', 'news_categories.id')
@@ -88,7 +88,7 @@ class MainController extends Controller {
     {
         // Set the page class
         $page_class = 'main';
-        
+
         // Get a listing of all the messages
         $messages = MessageModel::find(1);
 
@@ -109,7 +109,7 @@ class MainController extends Controller {
     {
         // Set the page class
         $page_class = 'main';
-        
+
         // Get a listing of all the messages
         $messages = MessageModel::find(1);
 
@@ -124,6 +124,16 @@ class MainController extends Controller {
             ->with('page_class', $page_class)
             ->with('messages', $messages)
             ->with('menu_items', $menu_items);
+    }
+
+    public function contact()
+    {
+        # code...
+    }
+
+    public function join()
+    {
+        # code...
     }
 
 }
