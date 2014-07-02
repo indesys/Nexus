@@ -1,24 +1,24 @@
 <?php namespace Nexus\Core\Models;
 
-use Illuminate\Database\Eloquent\SoftDeletingTrait;
+use Illuminate\Database\Eloquent\SoftDeletingTrait,
+    Eloquent;
 
-class DepartmentModel extends \Eloquent {
+class DepartmentModel extends Eloquent {
 
     use SoftDeletingTrait;
 
-    protected $primaryKey = 'dept_id' ;
     protected $table = 'departments';
-    protected $fillable = ['dept_name', 'dept_order', 'dept_image', 'dept_website', 'dept_is_council'];
+    protected $fillable = ['name', 'dpt_order', 'description', 'image', 'url', 'admin'];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public function positions()
     {
-        return $this->hasMany('PositionModel', 'dept_id')->orderBy('position_order');
+        return $this->hasMany('PositionModel', 'dept_id')->orderBy('pos_order');
     }
 
-    public function scopeDeptIsCouncil($query)
+    public function scopeAdmin($query)
     {
-        $query->where('dept_is_council', (int) true);
+        $query->where('admin', (int) true);
     }
 
 }

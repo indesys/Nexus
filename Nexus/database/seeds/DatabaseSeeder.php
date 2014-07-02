@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder {
         $this->call('TaskForceSeeder');
         $this->call('TaskGroupSeeder');
         $this->call('ShipSeeder');
+        $this->call('ShipClassSeeder');
     }
 
 }

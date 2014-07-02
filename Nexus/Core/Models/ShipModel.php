@@ -1,60 +1,50 @@
 <?php namespace Nexus\Core\Models;
 
-use Illuminate\Database\Eloquent\SoftDeletingTrait;
+use Illuminate\Database\Eloquent\SoftDeletingTrait,
+	Eloquent;
 
-class ShipModel extends \Eloquent {
+class ShipModel extends Eloquent {
 
     use SoftDeletingTrait;
 
-    protected $primaryKey = 'ship_id' ;
-	protected $table = 'ships';
-    protected $fillable = ['ship_name_prefix', 'ship_name', 'ship_registry_prefix', 'ship_registry', 'ship_tf', 'ship_tg', 'ship_banner', 'ship_website', 'ship_class', 'ship_co', 'ship_xo', 'ship_status', 'ship_sim_format', 'ship_intro'];
+    protected $table = 'ships';
+    protected $fillable = ['task_force_id', 'task_group_id', 'ship_class_id', 'name', 'registry', 'image', 'url', 'status_id', 'format', 'intro', 'commanding_officer', 'executive_officer'];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
 
 	public function taskforce()
 	{
-    	return $this->belongsTo('TaskForceModel', 'ship_tf', 'tf_id');
+    	return $this->belongsTo('TaskForceModel', 'task_force_id');
 	}
 
 	public function taskgroup()
 	{
-    	return $this->belongsTo('TaskGroupModel', 'ship_tg', 'tg_id');
+    	return $this->belongsTo('TaskGroupModel', 'task_group_id');
 	}
 
 	public function crew()
 	{
-    	return $this->belongsToMany('CharacterModel', 'manifests', 'ship_id', 'char_id');
-	}
-
-	public function nameprefix()
-	{
-    	return $this->belongsTo('NamePrefixModel', 'ship_name_prefix', 'n_prefix_id');
-	}
-
-	public function registryprefix()
-	{
-    	return $this->belongsTo('RegistryPrefixModel', 'ship_registry_prefix', 'r_prefix_id');
+    	return $this->belongsToMany('CharacterModel', 'manifests');
 	}
 
 	public function shipstatus()
 	{
-    	return $this->belongsTo('ShipStatusModel', 'ship_status', 'status_id');
+    	return $this->belongsTo('ShipStatusModel', 'status');
 	}
 
 	public function shipclass()
 	{
-    	return $this->belongsTo('ShipClassModel', 'ship_class', 'class_id');
+    	return $this->belongsTo('ShipClassModel', 'ship_class_id');
 	}
 
 	public function co()
 	{
-    	return $this->hasOne('CharacterModel', 'char_id', 'ship_co');
+    	return $this->hasOne('CharacterModel', 'commanding_officer');
 	}
 
 	public function xo()
 	{
-    	return $this->hasOne('CharacterModel', 'char_id', 'ship_xo');
+    	return $this->hasOne('CharacterModel', 'executive_officer');
 	}
 
 }

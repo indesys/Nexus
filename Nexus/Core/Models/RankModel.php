@@ -1,14 +1,14 @@
 <?php namespace Nexus\Core\Models;
 
-use Illuminate\Database\Eloquent\SoftDeletingTrait;
+use Illuminate\Database\Eloquent\SoftDeletingTrait
+    Eloquent;
 
-class RankModel extends \Eloquent {
+class RankModel extends Eloquent {
 
     use SoftDeletingTrait;
 
-    protected $primaryKey = 'rank_id' ;
-	protected $table = 'ranks';
-    protected $fillable = ['rank_short_name', 'rank_name', 'rank_rank_order', 'rank_image'];
+    protected $table = 'ranks';
+    protected $fillable = ['short_name', 'name', 'rnk_order', 'image'];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public function character()

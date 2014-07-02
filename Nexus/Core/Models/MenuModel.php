@@ -1,12 +1,13 @@
-<?php namespace Nexus\Core\Models ;
+<?php namespace Nexus\Core\Models;
 
-use Eloquent ;
+use Illuminate\Database\Eloquent\SoftDeletingTrait,
+	Eloquent;
 
 class MenuModel extends Eloquent
 {
-	protected $primaryKey = 'submenu_id' ;
+	use SoftDeletingTrait;
+
 	protected $table = 'menu_sub' ;
-	protected $fillable = ['submenu_text', 'submenu_link', 'submenu_class', 'submenu_order', 'submenu_active'] ;
-	
-	public $timestamps = false ;
+	protected $fillable = ['text', 'link', 'pg_class', 'list_order', 'active'] ;
+    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 }

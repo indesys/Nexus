@@ -1,13 +1,13 @@
-<?php namespace Nexus\Core\Models ;
+<?php namespace Nexus\Core\Models;
 
-use Eloquent ;
+use Illuminate\Database\Eloquent\SoftDeletingTrait,
+	Eloquent;
 
 class NewsModel extends Eloquent
 {
-	protected $primaryKey = 'news_id' ;
+	use SoftDeletingTrait;
+
 	protected $table = 'news' ;
-	protected $fillable = ['news_category', 'news_title', 'news_content', 'news_posted', 'news_active'] ;
-	protected $dates = array('news_posted') ;
-	
-	public $timestamps = false ;
+	protected $fillable = ['category_id', 'title', 'content', 'activated'] ;
+    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 }

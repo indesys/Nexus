@@ -1,13 +1,14 @@
 <?php namespace Nexus\Core\Models;
 
-use Illuminate\Database\Eloquent\SoftDeletingTrait;
+use Illuminate\Database\Eloquent\SoftDeletingTrait,
+    Eloquent;
 
-class TaskGroupModel extends \Eloquent {
+class TaskGroupModel extends Eloquent {
 
     use SoftDeletingTrait;
 
     protected $table = 'task_groups';
-    protected $fillable = ['task_force_id', 'name'];
+    protected $fillable = ['task_force_id', 'name', 'alias', 'image', 'url'];
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     public function taskforce()

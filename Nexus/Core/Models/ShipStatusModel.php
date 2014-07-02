@@ -1,19 +1,20 @@
-<?php namespace Nexus\Core\Models ;
+<?php namespace Nexus\Core\Models;
 
-use Eloquent ;
+use Illuminate\Database\Eloquent\SoftDeletingTrait,
+	Eloquent;
 
 class ShipStatusModel extends Eloquent
 {
-	protected $primaryKey = 'status_id' ;
+	use SoftDeletingTrait;
+
 	protected $table = 'ship_status' ;
-	protected $fillable = ['status_name'] ;
-	
-	public $timestamps = false ;
+	protected $fillable = ['name'] ;
+    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
 
 	public function ships()
 	{
-    	return $this->hasMany('ShipsModel', 'ship_status');
+    	return $this->hasMany('ShipModel', 'status_id');
 	}
 
 }

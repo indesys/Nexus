@@ -59,11 +59,11 @@ class PositionSeeder extends Seeder {
             ['dept_id' => 7, 'name' => 'Botanist', 'pos_order' => 8],
 
             ['dept_id' => 8, 'name' => 'Chief Medical Officer', 'pos_order' => 0],
-            ['dept_id' => 8, 'name' => 'Chief Counsellor', 'pos_order' => 1],
+            ['dept_id' => 8, 'name' => 'Chief Counselor', 'pos_order' => 1],
             ['dept_id' => 8, 'name' => 'Assistant Chief Medical Officer', 'pos_order' => 2],
             ['dept_id' => 8, 'name' => 'Medical Officer', 'pos_order' => 3],
             ['dept_id' => 8, 'name' => 'Surgeon', 'pos_order' => 4],
-            ['dept_id' => 8, 'name' => 'Counsellor', 'pos_order' => 5],
+            ['dept_id' => 8, 'name' => 'Counselor', 'pos_order' => 5],
             ['dept_id' => 8, 'name' => 'Head Nurse', 'pos_order' => 6],
             ['dept_id' => 8, 'name' => 'Nurse', 'pos_order' => 7],
             ['dept_id' => 8, 'name' => 'Morale Officer', 'pos_order' => 8],
@@ -125,9 +125,9 @@ class PositionSeeder extends Seeder {
             ['dept_id' => 19, 'name' => 'Chief of Staff', 'pos_order' => 0],
             ['dept_id' => 19, 'name' => 'Fleet Communications Director', 'pos_order' => 1],
 
-            ['dept_id' => 10, 'name' => 'Judge Advocate General', 'pos_order' => 0],
-            ['dept_id' => 10, 'name' => 'Deputy Judge Advocate General', 'pos_order' => 1],
-            ['dept_id' => 10, 'name' => 'Legal Officer', 'pos_order' => 2],
+            ['dept_id' => 20, 'name' => 'Judge Advocate General', 'pos_order' => 0],
+            ['dept_id' => 20, 'name' => 'Deputy Judge Advocate General', 'pos_order' => 1],
+            ['dept_id' => 20, 'name' => 'Legal Officer', 'pos_order' => 2],
         ];
 
         foreach ($positions as $position)
