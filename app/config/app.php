@@ -189,7 +189,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 
-		'BaseController'	=> 'Nova\Core\Controllers\BaseController',
+		'BaseController'	=> 'Nexus\Core\Controllers\BaseController',
 		'Date'				=> 'Carbon\Carbon',
 		'Model'				=> 'Nexus\Extensions\Laravel\Database\Eloquent\Model',
 
