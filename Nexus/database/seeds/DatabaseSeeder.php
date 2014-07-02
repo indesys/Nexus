@@ -8,6 +8,7 @@ class DatabaseSeeder extends Seeder {
 
         $this->call('MessageSeeder');
         $this->call('SettingSeeder');
+        $this->call('MenuSeeder');
 
         $this->call('DepartmentSeeder');
         $this->call('PositionSeeder');

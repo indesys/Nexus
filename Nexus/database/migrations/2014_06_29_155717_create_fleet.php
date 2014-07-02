@@ -54,12 +54,16 @@ class CreateFleet extends Migration {
 			$table->increments('id');
 			$table->string('name');
 			$table->string('image')->nullable();
+			$table->timestamps();
+			$table->softDeletes();
 		});
 
 		Schema::create('ship_status', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('name');
+			$table->timestamps();
+			$table->softDeletes();
 		});
 
 		Schema::create('manifests', function(Blueprint $table)

@@ -16,8 +16,8 @@ Fleet Departments
 
 <table class="table100">
 	@foreach ($departments as $dept)
-		<tr><td width="400px">{{ HTML::image('assets/uploads/departments/'.$dept->dept_image) }}</td>
-			<td style="font-size:0.8em;">{{ HTML::link($dept->dept_website) }}</td></tr>
+		<tr><td width="400px">{{ HTML::image('assets/uploads/departments/'.$dept->image) }}</td>
+			<td style="font-size:0.8em;">{{ HTML::link($dept->url) }}</td></tr>
 	@endforeach
 </table>
 

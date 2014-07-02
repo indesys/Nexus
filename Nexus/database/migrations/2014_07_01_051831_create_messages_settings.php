@@ -58,9 +58,9 @@ class CreateMessagesSettings extends Migration {
 		{
 			$table->increments('id');
 			$table->string('text');
-			$table->string('link');
+			$table->string('url');
 			$table->enum('pg_class',array('main','fleet','wiki'))->default('main');
-			$table->integer('list_order')->default(99);
+			$table->integer('sequence')->default(99);
 			$table->integer('active')->default((int) false);
 			$table->timestamps();
 			$table->softDeletes();

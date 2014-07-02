@@ -19,10 +19,10 @@ class FleetController extends Controller {
 		$page_class = 'fleet';
 		
         // Query the database to set the subnavigation menu
-		$menu_items = MenuModel::where('submenu_class','=',$page_class)
-								->where('submenu_active','=','1')
-								->orderBy('submenu_order','ASC')
-								->get();
+        $menu_items = MenuModel::where('pg_class','=',$page_class)
+                                ->where('active','=','1')
+                                ->orderBy('sequence','ASC')
+                                ->get();
 		
 		// Make the View
 		return View::make('pages.fleet.index')
@@ -34,14 +34,14 @@ class FleetController extends Controller {
     {
 		$page_class = 'fleet';
 
-		// Query the database to set the subnavigation menu
-		$menu_items = MenuModel::where('submenu_class','=',$page_class)
-								->where('submenu_active','=','1')
-								->orderBy('submenu_order','ASC')
-								->get();
+        // Query the database to set the subnavigation menu
+        $menu_items = MenuModel::where('pg_class','=',$page_class)
+                                ->where('active','=','1')
+                                ->orderBy('sequence','ASC')
+                                ->get();
         // Retrieve all the task forces minus the surplus depot holding bay
-		$task_forces = TaskForceModel::where('tf_number','!=','99')
-								->orderBy('tf_number','ASC')
+		$task_forces = TaskForceModel::where('name','!=','Task Force 99')
+								->orderBy('name','ASC')
 								->get();
 		
 		// Make the View
@@ -60,13 +60,13 @@ class FleetController extends Controller {
 		} else {
 			$id = FALSE;
 		}
-		
+
         // Query the database to set the subnavigation menu
-		$menu_items = MenuModel::where('submenu_class','=',$page_class)
-								->where('submenu_active','=','1')
-								->orderBy('submenu_order','ASC')
-								->get();
-		$tf = TaskForceModel::where('tf_id','=',$id)->first(); // Using first to make sure we only have one record
+        $menu_items = MenuModel::where('pg_class','=',$page_class)
+                                ->where('active','=','1')
+                                ->orderBy('sequence','ASC')
+                                ->get();
+		$tf = TaskForceModel::where('id','=',$id)->first(); // Using first to make sure we only have one record
 
 		// Make the View
 		return View::make('pages.fleet.tf_ships')
@@ -79,15 +79,15 @@ class FleetController extends Controller {
 	public function departments()
     {
 		$page_class = 'fleet';
-		
+
         // Query the database to set the subnavigation menu
-		$menu_items = MenuModel::where('submenu_class','=',$page_class)
-								->where('submenu_active','=','1')
-								->orderBy('submenu_order','ASC')
-								->get();
+        $menu_items = MenuModel::where('pg_class','=',$page_class)
+                                ->where('active','=','1')
+                                ->orderBy('sequence','ASC')
+                                ->get();
         // Retrieve all the details of the fleet departments
-		$departments = DepartmentModel::where('dept_is_council','=','1')
-								->orderBy('dept_order', 'ASC')
+		$departments = DepartmentModel::where('admin','=','1')
+								->orderBy('sequence', 'ASC')
 								->get();
 		
 		return View::make('pages.fleet.departments')
@@ -99,12 +99,12 @@ class FleetController extends Controller {
 	public function command_staff()
     {
 		$page_class = 'fleet';
-		
+
         // Query the database to set the subnavigation menu
-		$menu_items = MenuModel::where('submenu_class','=',$page_class)
-								->where('submenu_active','=','1')
-								->orderBy('submenu_order','ASC')
-								->get();
+        $menu_items = MenuModel::where('pg_class','=',$page_class)
+                                ->where('active','=','1')
+                                ->orderBy('sequence','ASC')
+                                ->get();
         // Retrieve all the details of the fleet departments
 		$departments = DepartmentModel::where('dept_is_council','=','1')->orderBy('dept_order', 'ASC')->get();
 		
@@ -117,12 +117,12 @@ class FleetController extends Controller {
 	public function rules()
     {
 		$page_class = 'fleet';
-		
+
         // Query the database to set the subnavigation menu
-		$menu_items = MenuModel::where('submenu_class','=',$page_class)
-								->where('submenu_active','=','1')
-								->orderBy('submenu_order','ASC')
-								->get();
+        $menu_items = MenuModel::where('pg_class','=',$page_class)
+                                ->where('active','=','1')
+                                ->orderBy('sequence','ASC')
+                                ->get();
         // Query the database to retrieve the fleet rules
 		$rules = MessageModel::find(1);
 		
@@ -135,15 +135,15 @@ class FleetController extends Controller {
 	public function task_forces()
     {
 		$page_class = 'fleet';
-		
+
         // Query the database to set the subnavigation menu
-		$menu_items = MenuModel::where('submenu_class','=',$page_class)
-								->where('submenu_active','=','1')
-								->orderBy('submenu_order','ASC')
-								->get();
+        $menu_items = MenuModel::where('pg_class','=',$page_class)
+                                ->where('active','=','1')
+                                ->orderBy('sequence','ASC')
+                                ->get();
         // Retrieve all the task forces minus the surplus depot holding bay
-		$task_forces = TaskForceModel::where('tf_number','!=','99')
-								->orderBy('tf_number','ASC')
+		$task_forces = TaskForceModel::where('name','!=','Task Force 99')
+								->orderBy('name','ASC')
 								->get();
 		
 		return View::make('pages.fleet.task_forces')

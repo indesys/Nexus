@@ -21,9 +21,9 @@ class MainController extends Controller {
         $setting = SettingModel::find(1);
 
         // Query the database to set the subnavigation menu
-        $menu_items = MenuModel::where('submenu_class','=',$page_class)
-                                ->where('submenu_active','=','1')
-                                ->orderBy('submenu_order','ASC')
+        $menu_items = MenuModel::where('pg_class','=',$page_class)
+                                ->where('active','=','1')
+                                ->orderBy('sequence','ASC')
                                 ->get();
 
         // Make the View
@@ -46,9 +46,9 @@ class MainController extends Controller {
         $setting = SettingModel::find(1);
 
         // Query the database to set the subnavigation menu
-        $menu_items = MenuModel::where('submenu_class','=',$page_class)
-                                ->where('submenu_active','=','1')
-                                ->orderBy('submenu_order','ASC')
+        $menu_items = MenuModel::where('pg_class','=',$page_class)
+                                ->where('active','=','1')
+                                ->orderBy('sequence','ASC')
                                 ->get();
 
         // Make the View
@@ -65,16 +65,16 @@ class MainController extends Controller {
         $page_class = 'main';
         
         // Get a listing of all the messages
-        $news_items = NewsModel::where('news_active','=','1')
-                                ->join('news_cats', 'news.news_category', '=', 'news_cats.news_cat_id')
+        $news_items = NewsModel::where('activated','=','1')
+                                ->join('news_categories', 'news.category_id', '=', 'news_categories.id')
                                 ->take(10)
-                                ->orderBy('news_posted','DESC')
+                                ->orderBy('news.created_at','DESC')
                                 ->get();
 
         // Query the database to set the subnavigation menu
-        $menu_items = MenuModel::where('submenu_class','=',$page_class)
-                                ->where('submenu_active','=','1')
-                                ->orderBy('submenu_order','ASC')
+        $menu_items = MenuModel::where('pg_class','=',$page_class)
+                                ->where('active','=','1')
+                                ->orderBy('sequence','ASC')
                                 ->get();
 
         // Make the View
@@ -93,9 +93,9 @@ class MainController extends Controller {
         $messages = MessageModel::find(1);
 
         // Query the database to set the subnavigation menu
-        $menu_items = MenuModel::where('submenu_class','=',$page_class)
-                                ->where('submenu_active','=','1')
-                                ->orderBy('submenu_order','ASC')
+        $menu_items = MenuModel::where('pg_class','=',$page_class)
+                                ->where('active','=','1')
+                                ->orderBy('sequence','ASC')
                                 ->get();
 
         // Make the View
@@ -114,9 +114,9 @@ class MainController extends Controller {
         $messages = MessageModel::find(1);
 
         // Query the database to set the subnavigation menu
-        $menu_items = MenuModel::where('submenu_class','=',$page_class)
-                                ->where('submenu_active','=','1')
-                                ->orderBy('submenu_order','ASC')
+        $menu_items = MenuModel::where('pg_class','=',$page_class)
+                                ->where('active','=','1')
+                                ->orderBy('sequence','ASC')
                                 ->get();
 
         // Make the View

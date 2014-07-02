@@ -12,10 +12,10 @@ About Us
 
 <h1>About {{ $setting->fleet_name }}</h1>
 
-<p>{{ nl2br($messages->fleet_message) }}</p>
+<p>{{ nl2br($messages->message) }}</p>
 
 <h2>{{ $setting->fleet_name }}'s History</h2>
 
-<p>{{ nl2br($messages->fleet_history) }}</p>
+<p>{{ nl2br($messages->history) }}</p>
 
 @stop

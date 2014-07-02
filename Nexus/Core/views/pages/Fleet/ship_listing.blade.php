@@ -16,9 +16,9 @@ Ship Listing Options
 
 <table class="table100">
 	@foreach ($task_forces as $tf)
-		<tr><td align="center">Task Force {{ $tf->tf_number ." - ". $tf->tf_name }}</td></tr>
-		<tr><td align="center">{{ HTML::image('assets/uploads/taskforce/'.$tf->tf_banner) }}</td></tr>
-		<tr><td align="center" style="font-size:0.8em;">{{ HTML::link('fleet/tf_ships/'.$tf->tf_id, 'Show Ships') }}</td></tr>
+		<tr><td align="center">{{ $tf->name ." - ". $tf->alias }}</td></tr>
+		<tr><td align="center">{{ HTML::image('assets/uploads/taskforce/'.$tf->image) }}</td></tr>
+		<tr><td align="center" style="font-size:0.8em;">{{ HTML::link('fleet/tf_ships/'.$tf->id, 'Show Ships') }}</td></tr>
 		<tr><td>&nbsp;</td></tr>
 	@endforeach
 </table>
