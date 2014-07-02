@@ -11,7 +11,7 @@ class DepartmentSeeder extends Seeder {
             ['name' => 'Security and Tactical', 'dpt_order' => 3],
             ['name' => 'Operations', 'dpt_order' => 4],
             ['name' => 'Engineering', 'dpt_order' => 5],
-            ['name' => 'Medical and Counselling', 'dpt_order' => 6],
+            ['name' => 'Medical and Counseling', 'dpt_order' => 6],
             ['name' => 'Science', 'dpt_order' => 7],
             ['name' => 'Intelligence', 'dpt_order' => 8],
             ['name' => 'Diplomatic Detachment', 'dpt_order' => 9],
