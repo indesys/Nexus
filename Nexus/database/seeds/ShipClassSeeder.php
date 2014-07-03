@@ -18,14 +18,14 @@ class ShipClassSeeder extends Seeder {
             ['name' => 'Nebula'],
             ['name' => 'Prometheus'],
 
-            ['name' => 'Vorcha'],
+            ['name' => 'Vor\'cha'],
             ['name' => 'Valdore'],
             ['name' => 'Galor'],
         ];
 
         foreach ($classes as $class)
         {
-            SpecClassShipModel::create($class);
+            ShipClassModel::create($class);
         }
     }
 

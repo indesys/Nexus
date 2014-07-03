@@ -100,32 +100,32 @@ class PositionSeeder extends Seeder {
             ['dept_id' => 13, 'name' => 'Chef', 'sequence' => 2],
             ['dept_id' => 13, 'name' => 'Teacher', 'sequence' => 3],
 
-            ['dept_id' => 14, 'name' => 'Commander in Chief', 'sequence' => 0],
-            ['dept_id' => 14, 'name' => 'Deputy Commander in Chief', 'sequence' => 1],
+            ['dept_id' => 14, 'name' => 'Commander in Chief', 'sequence' => 0, 'admin' => 1],
+            ['dept_id' => 14, 'name' => 'Deputy Commander in Chief', 'sequence' => 1, 'admin' => 1],
 
-            ['dept_id' => 15, 'name' => 'Task Force 1 Commanding Officer', 'sequence' => 0],
+            ['dept_id' => 15, 'name' => 'Task Force 1 Commanding Officer', 'sequence' => 0, 'admin' => 1],
             ['dept_id' => 15, 'name' => 'Task Group 1-A Commanding Officer', 'sequence' => 1],
-            ['dept_id' => 15, 'name' => 'Task Force 27 Commanding Officer', 'sequence' => 2],
+            ['dept_id' => 15, 'name' => 'Task Force 27 Commanding Officer', 'sequence' => 2, 'admin' => 1],
             ['dept_id' => 15, 'name' => 'Task Group 27-A Commanding Officer', 'sequence' => 3],
             ['dept_id' => 15, 'name' => 'Task Group 27-B Commanding Officer', 'sequence' => 4],
-            ['dept_id' => 15, 'name' => 'Task Force 51 Commanding Officer', 'sequence' => 5],
+            ['dept_id' => 15, 'name' => 'Task Force 51 Commanding Officer', 'sequence' => 5, 'admin' => 1],
             ['dept_id' => 15, 'name' => 'Task Group 51-A Commanding Officer', 'sequence' => 6],
             ['dept_id' => 15, 'name' => 'Task Group 51-B Commanding Officer', 'sequence' => 7],
 
-            ['dept_id' => 16, 'name' => 'Academy Commandant', 'sequence' => 0],
+            ['dept_id' => 16, 'name' => 'Academy Commandant', 'sequence' => 0, 'admin' => 1],
             ['dept_id' => 16, 'name' => 'Deputy Academy Commandant', 'sequence' => 1],
             ['dept_id' => 16, 'name' => 'Instructor', 'sequence' => 2],
 
-            ['dept_id' => 17, 'name' => 'Director of Personnel Management', 'sequence' => 0],
+            ['dept_id' => 17, 'name' => 'Director of Personnel Management', 'sequence' => 0, 'admin' => 1],
             ['dept_id' => 17, 'name' => 'Deputy Director of Personnel Management', 'sequence' => 1],
 
-            ['dept_id' => 18, 'name' => 'Research and Development Director', 'sequence' => 0],
+            ['dept_id' => 18, 'name' => 'Research and Development Director', 'sequence' => 0, 'admin' => 1],
             ['dept_id' => 18, 'name' => 'Assistant Research and Development Director', 'sequence' => 1],
 
-            ['dept_id' => 19, 'name' => 'Chief of Staff', 'sequence' => 0],
+            ['dept_id' => 19, 'name' => 'Chief of Staff', 'sequence' => 0, 'admin' => 1],
             ['dept_id' => 19, 'name' => 'Fleet Communications Director', 'sequence' => 1],
 
-            ['dept_id' => 20, 'name' => 'Judge Advocate General', 'sequence' => 0],
+            ['dept_id' => 20, 'name' => 'Judge Advocate General', 'sequence' => 0, 'admin' => 1],
             ['dept_id' => 20, 'name' => 'Deputy Judge Advocate General', 'sequence' => 1],
             ['dept_id' => 20, 'name' => 'Legal Officer', 'sequence' => 2],
         ];

@@ -54,6 +54,7 @@ class CreateUsersCharacters extends Migration {
 			$table->string('name');
 			$table->text('description')->nullable();
 			$table->integer('sequence')->default(99); // 'order' gave a flag saying it was protected by MySQL
+			$table->integer('admin')->default(0);
 			$table->integer('open')->default(1);
 			$table->timestamps();
 			$table->softDeletes();

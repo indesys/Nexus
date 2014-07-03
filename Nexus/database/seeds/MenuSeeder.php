@@ -5,9 +5,9 @@ class MenuSeeder extends Seeder {
     public function run()
     {
         $menus = [
-            ['text' => 'About Us', 'url' => 'main/about_us', 'pg_class' => 'main', 'sequence' => 0, 'active' => 1],
-            ['text' => 'Join Us', 'url' => 'main/join_us', 'pg_class' => 'main', 'sequence' => 1, 'active' => 1],
-            ['text' => 'Contact Us', 'url' => 'main/contact_us', 'pg_class' => 'main', 'sequence' => 2, 'active' => 1],
+            ['text' => 'About Us', 'url' => 'main/about', 'pg_class' => 'main', 'sequence' => 0, 'active' => 1],
+            ['text' => 'Join Us', 'url' => 'main/join', 'pg_class' => 'main', 'sequence' => 1, 'active' => 1],
+            ['text' => 'Contact Us', 'url' => 'main/contact', 'pg_class' => 'main', 'sequence' => 2, 'active' => 1],
             ['text' => 'Fleet News Service', 'url' => 'main/news', 'pg_class' => 'main', 'sequence' => 3, 'active' => 1],
             ['text' => 'Forums', 'url' => 'http://forums.nexusfleet.net/', 'pg_class' => 'main', 'sequence' => 4, 'active' => 0],
             ['text' => 'FAQs', 'url' => 'main/faqs', 'pg_class' => 'main', 'sequence' => 5, 'active' => 1],

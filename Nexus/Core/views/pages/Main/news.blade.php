@@ -16,7 +16,7 @@ Fleet News Service
 
 @foreach ($news_items as $news)
 	<table class="table100">
-    	<tr><td width="50%"><h2>{{ $news->title }}</h2></td><td align="right"><span style="font-size:0.8em;">Posted under <strong></strong> on <strong>{{ $news->created_at->format('F j, Y @ Hi') }} hours</strong></span></td></tr>
+    	<tr><td width="50%"><h2>{{ $news->title }}</h2></td><td align="right"><span style="font-size:0.8em;">Posted under <strong>{{ $news->category->name }}</strong> on <strong>{{ $news->posted->format('F j, Y @ Hi') }} hours</strong></span></td></tr>
         <tr><td colspan="2">{{ nl2br($news->content) }}</td></tr>
     </table>
     <hr>

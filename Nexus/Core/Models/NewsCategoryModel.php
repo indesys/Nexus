@@ -3,17 +3,16 @@
 use Illuminate\Database\Eloquent\SoftDeletingTrait,
 	Eloquent;
 
-class ShipStatusModel extends Eloquent
+class NewsCategoryModel extends Eloquent
 {
 	use SoftDeletingTrait;
 
-	protected $table = 'ship_status' ;
+	protected $table = 'news_categories' ;
 	protected $fillable = ['name'] ;
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
-	public function ships()
-	{
-    	return $this->hasOne('ShipModel', 'status_id');
-	}
-
+    public function category()
+    {
+        return $this->hasMany('NewsCategoryModel', 'category_id');
+    }
 }

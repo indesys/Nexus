@@ -40,7 +40,7 @@ class CreateFleet extends Migration {
 			$table->string('registry')->nullable();
 			$table->string('image')->nullable();
 			$table->string('url')->nullable();
-			$table->integer('status_id')->unsigned()->nullable(); // comes from the status table
+			$table->integer('status_id')->unsigned()->nullable()->default(1); // comes from the status table
 			$table->enum('format',array('Web','Email','Forum'))->default('Web'); // best set for formatting reasons - these cover most cases in use
 			$table->text('intro')->nullable();
 			$table->bigInteger('commanding_officer')->unsigned()->nullable();

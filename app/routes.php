@@ -11,19 +11,11 @@ Route::get('/', [
 	'as' => 'home',
 	'uses' => 'Nexus\Core\Controllers\MainController@index'
 ]);
-Route::get('credits', [
-	'as' => 'credits',
-	'uses' => 'Nexus\Core\Controllers\MainController@credits'
-]);
-Route::get('join', [
-	'as' => 'join',
-	'uses' => 'Nexus\Core\Controllers\MainController@join'
-]);
 
 Route::group(['prefix' => 'main', 'namespace' => 'Nexus\Core\Controllers'], function()
 {
-	Route::get('about_us', [
-		'as' => 'about_us',
+	Route::get('about', [
+		'as' => 'about',
 		'uses' => 'MainController@about'
 	]);
 	Route::get('news', [
@@ -34,9 +26,13 @@ Route::group(['prefix' => 'main', 'namespace' => 'Nexus\Core\Controllers'], func
 		'as' => 'faqs',
 		'uses' => 'MainController@faqs'
 	]);
-	Route::get('join_us', [
-		'as' => 'join_us',
+	Route::get('join', [
+		'as' => 'join',
 		'uses' => 'MainController@join'
+	]);
+	Route::get('credits', [
+		'as' => 'credits',
+		'uses' => 'MainController@credits'
 	]);
 });
 

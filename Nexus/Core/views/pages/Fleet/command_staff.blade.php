@@ -16,19 +16,19 @@ Command Staff Listing
 
 <table class='table100'>
 @foreach ($departments as $dept)
-    <tr><td colspan='4'><h2>{{ $dept->dept_name }}</h2></td></tr>
+    <tr><td colspan='4'><h2>{{ $dept->name }}</h2></td></tr>
 		@foreach ($dept->positions as $position)
         	<tr><td>
-        		@if ($position->position_is_council == 1)
-        			<span style='color:#29c;'>{{ $position->position_name }}</span>
+        		@if ($position->admin == 1)
+        			<span style='color:#29c;'>{{ $position->name }}</span>
         		@else
-        			&nbsp;&nbsp;&nbsp;{{ $position->position_name }}
+        			&nbsp;&nbsp;&nbsp;{{ $position->name }}
         		@endif</td>
         		@foreach ($position->characters as $character)
-        			@if ($position->positions_open >= 1)
+        			@if ($character->character_id === false)
                         <td width='150px'>&nbsp;</td><td>Position Open</td>
                     @else
-                        <td width='150px'>{{ HTML::image('assets/uploads/ranks/ds9/'.$character->rank->rank_image) }}</td><td>{{ $character->rank->rank_name ." ". $character->char_first_name ." ". $character->char_last_name }}</td>
+                        <td width='150px'>{{ HTML::image('assets/uploads/ranks/ds9/'.$character->rank->image) }}</td><td>{{ $character->rank->name ." ". $character->name }}</td>
                     @endif
         		@endforeach
         	</tr>

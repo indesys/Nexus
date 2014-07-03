@@ -44,9 +44,9 @@ Task Force Ship Listing
 		
 		<tr><td colspan='4'>&nbsp;</td></tr>
 
-		<tr style='font-size:0.8em;'><td width='170px'>Task Force/Task Group:</td><td colspan='2'>{{ $ship->taskforce->name ." | ". $ship->taskgroup->name }}</td></tr>
-		<tr style='font-size:0.8em;'><td width='170px'>Status:</td><td colspan='2'>{{ $ship->status_id }}</td></tr>
-		<tr style='font-size:0.8em;'><td width='170px'>Class:</td><td colspan='2'>{{ $ship->ship_class_id }}-class</td></tr>
+		<tr style='font-size:0.8em;'><td width='170px'>Task Force/Task Group:</td><td colspan='2'>{{ $ship->taskforce->name ." | ". $ship->taskgroup->name ." | ". $ship->taskgroup->alias }}</td></tr>
+		<tr style='font-size:0.8em;'><td width='170px'>Status:</td><td colspan='2'>{{ $ship->shipstatus->name }}</td></tr>
+		<tr style='font-size:0.8em;'><td width='170px'>Class:</td><td colspan='2'>{{ $ship->shipclass->name }}-class</td></tr>
 
 		@if ($ship->commanding_officer == NULL)
 			<tr style='font-size:0.8em;'><td colspan='3'>&nbsp;</td></tr>

@@ -16,7 +16,7 @@ class CharacterModel extends Eloquent {
         return $this->belongsToMany('PositionModel', 'manifests');
     }
 
-    public function printName()
+    public function printname()
     {
         return $this->rank->rank_name." ".$this->name;
     }

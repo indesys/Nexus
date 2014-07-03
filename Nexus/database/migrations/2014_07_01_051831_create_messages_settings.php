@@ -41,6 +41,7 @@ class CreateMessagesSettings extends Migration {
 			$table->integer('category_id')->unsigned();
 			$table->string('title');
 			$table->text('content');
+			$table->datetime('posted');
 			$table->integer('activated')->default((int) false);
 			$table->timestamps();
 			$table->softDeletes();

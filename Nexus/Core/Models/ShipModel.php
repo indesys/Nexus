@@ -24,12 +24,12 @@ class ShipModel extends Eloquent {
 
 	public function crew()
 	{
-    	return $this->belongsToMany('CharacterModel', 'manifests');
+    	return $this->belongsToMany('CharacterModel', 'manifests', 'ship_id', 'character_id');
 	}
 
 	public function shipstatus()
 	{
-    	return $this->belongsTo('ShipStatusModel', 'status');
+    	return $this->belongsTo('ShipStatusModel', 'status_id');
 	}
 
 	public function shipclass()
@@ -39,12 +39,12 @@ class ShipModel extends Eloquent {
 
 	public function co()
 	{
-    	return $this->hasOne('CharacterModel', 'commanding_officer');
+    	return $this->hasOne('CharacterModel', 'id', 'commanding_officer');
 	}
 
 	public function xo()
 	{
-    	return $this->hasOne('CharacterModel', 'executive_officer');
+    	return $this->hasOne('CharacterModel', 'id', 'executive_officer');
 	}
 
 }
