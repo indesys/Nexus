@@ -23,28 +23,14 @@ Task Force Ship Listing
 <p>The ships in this task force are listed below.</p>
 
 @foreach ($tf->ships as $ship)
+		<center><span style='font-size:1.3em; font-weight:bold;'>{{ HTML::link($ship->url,$ship->name) }}</span><br />
+		<span class='font_small'>{{ $ship->registry }}</span></center>
 
 	<table class='table100'>
-		<tr><td align='center' colspan='4'><font style='font-size:1.3em; font-weight:bold;'>{{ HTML::link($ship->url,$ship->name) }}</font><br /><font class='font_small'>{{ $ship->registry }}</font></td></tr>
-		<tr><td width='420px' rowspan='8'>{{ HTML::image('assets/uploads/ships/'.$ship->image) }}</td>
+		<tr><td width='420px' rowspan='7'>{{ HTML::image('assets/uploads/ships/'.$ship->image) }}</td>
 
-		@if ($ship->commanding_officer == NULL)
-			<td width='170px'>Commanding Officer:</td><td width='150px'>{{ HTML::image('assets/uploads/ranks/ds9/b-blank1.png') }}</td><td><font style='color:#fc0;'>Open Command!</font></td>
-		@else
-			<td width='170px'>Commanding Officer:</td><td width='150px'>{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->co->rank->image) }}</td><td>{{ $ship->co->rank->name ." ". $ship->co->name }}</td>
-		@endif
-
-		@if ($ship->commanding_officer == NULL)
-			<tr><td colspan='3'>&nbsp;</td></tr>
-		@elseif ($ship->commanding_officer != NULL && $ship->executive_officer == NULL)
-			<tr><td>Executive Officer:</td><td colspan='2' style='color:#f30;'>No XO has been assigned yet.</td></tr>
-		@else
-			<tr><td>Executive Officer:</td><td width='150px'>{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->xo->rank->image) }}</td><td>{{ $ship->xo->rank->name ." ". $ship->xo->name }}</td></tr>
-		@endif
-		
-		<tr><td colspan='4'>&nbsp;</td></tr>
-
-		<tr style='font-size:0.8em;'><td width='170px'>Task Force/Task Group:</td><td colspan='2'>{{ $ship->taskforce->name ." | ". $ship->taskgroup->name ." | ". $ship->taskgroup->alias }}</td></tr>
+		<tr style='font-size:0.8em;'><td width='170px'>Task Force</td><td colspan='2'>{{ $ship->taskforce->name }}</td></tr>
+		<tr style='font-size:0.8em;'><td width='170px'>Task Group</td><td colspan='2'>{{ $ship->taskgroup->alias }}</td></tr>
 		<tr style='font-size:0.8em;'><td width='170px'>Status:</td><td colspan='2'>{{ $ship->shipstatus->name }}</td></tr>
 		<tr style='font-size:0.8em;'><td width='170px'>Class:</td><td colspan='2'>{{ $ship->shipclass->name }}-class</td></tr>
 
@@ -59,11 +45,22 @@ Task Force Ship Listing
 		@else
 			<tr style='font-size:0.8em;'><td>Simming Format:</td><td colspan='2'>Play by {{ $ship->format }}</td></tr>
 		@endif
-
-		<tr><td align='center' colspan='4'>&nbsp;</td></tr>
-		<tr><td align='center' colspan='4'>{{ $ship->intro }}</td></tr>
-
 	</table>
+	<br />
+	<table class='table100'>
+		@if ($ship->commanding_officer == NULL)
+			<tr><td colspan='2' width='50%' align='center'>Commanding Officer</td><td colspan='2'>&nbsp;</td></tr>
+			<tr><td>{{ HTML::image('assets/uploads/ranks/ds9/b-blank1.png') }}</td><td><font style='color:#fc0;'>Open Command!</font></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+		@elseif ($ship->commanding_officer != NULL && $ship->executive_officer == NULL)
+			<tr><td colspan='2' width='50%' align='center'>Commanding Officer</td><td colspan='2' align='center'>Executive Officer</td></tr>
+			<tr><td width=''>{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->co->rank->image) }}</td><td>{{ $ship->co->rank->name ." ". $ship->co->name }}</td><td colspan='2' style='color:#f30; text-align:center;'>No XO has been assigned yet.</td></tr>
+		@else ($ship->commanding_officer != NULL && $ship->executive_officer == NULL)
+			<tr><td colspan='2' width='50%' align='center'>Commanding Officer</td><td colspan='2' align='center'>Executive Officer</td></tr>
+			<tr><td>{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->co->rank->image) }}</td><td>{{ $ship->co->rank->name ." ". $ship->co->name }}</td><td>{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->xo->rank->image) }}</td><td>{{ $ship->xo->rank->name ." ". $ship->xo->name }}</td></tr>
+		@endif
+	</table>
+	<br />
+		<center>{{ $ship->intro }}</center>
 	<br />
 	<hr>
 	<br />

@@ -1,10 +1,15 @@
 @charset "utf-8";
 /* CSS Document */
 
+@font-face {
+	font-family: bodyFont;
+	src: url('../fonts/play.ttf');
+}
+
 html, body {
 	background: #000;
-	font-family: "Segoe UI", Arial;
-	font-size: 12pt;
+	font-family: bodyFont;
+	font-size: 11pt;
 	color: #aaa;
 	line-height: 1.5em;
 	margin: 0px;
@@ -149,21 +154,21 @@ html, body {
 
 /* STANDARD FONT CLASSES */
 h1 {
-	font-family: "Segoe UI", Arial;
+	font-family: bodyFont;
 	font-weight: 100;
 	font-size: 2em;
 	color: #fb0;
 }
 
 h2 {
-	font-family: "Segoe UI", Arial;
+	font-family: bodyFont;
 	font-weight: 200;
 	font-size: 1.5em;
 	color: #fb0;
 }
 
 h3 {
-	font-family: "Segoe UI", Arial;
+	font-family: bodyFont;
 	font-size: 1.3em;
 	color: #fb0;
 }
