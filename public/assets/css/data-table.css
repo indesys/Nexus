@@ -1,0 +1,34 @@
+.data-table {
+    margin: 15px 0;
+}
+.data-table > .row {
+    margin-left: 0;
+    margin-right: 0;
+
+    border-top: 1px solid #222;
+}
+.data-table > .row p {
+    margin: 10px 0;
+}
+
+.data-table.data-table-striped > .row:nth-child(odd) {
+    background: #111;
+}
+
+.data-table.data-table-bordered > .row {
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+}
+.data-table.data-table-bordered > .row:first-child{
+    border-radius: 3px 3px 0 0;
+}
+.data-table.data-table-bordered > .row:last-child{
+    border-bottom: 1px solid #222;
+
+    border-radius: 0 0 3px 3px;
+}
+.data-table.data-table-bordered > .row:nth-child(1):nth-last-child(1) {
+    border-bottom: 1px solid #222;
+
+    border-radius: 3px;
+}
