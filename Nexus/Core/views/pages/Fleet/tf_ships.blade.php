@@ -16,7 +16,7 @@ Task Force Ship Listing
 	<p>The Task Force ID presented in the link, does not correspond to anything in the system.  Please go back and select a valid link.</p>
 @else
 
-<h1>{{ $tf->tf_name }}</h1>
+<h1>{{ $tf->name ." - ". $tf->alias }}</h1>
 
 <h2>Ship Listing</h2>
 
