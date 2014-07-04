@@ -5,10 +5,11 @@ class CharacterSeeder extends Seeder {
     public function run()
     {
         $characters = [
-            ['user_id' => 1, 'name' => 'Carter Verrill', 'rank_id' => 2],
-            ['user_id' => 2, 'name' => 'Alyn Toromi', 'rank_id' => 5],
+            ['user_id' => 1, 'name' => 'Carter Verrill', 'rank_id' => 1],
+            ['user_id' => 2, 'name' => 'Alyn Toromi', 'rank_id' => 2],
             ['user_id' => 3, 'name' => 'McKinley Wyler', 'rank_id' => 4],
             ['user_id' => 4, 'name' => 'Cole Llewellyn', 'rank_id' => 5],
+            ['user_id' => 5, 'name' => 'Sienna Carrick', 'rank_id' => 5],
         ];
 
         foreach ($characters as $character)
