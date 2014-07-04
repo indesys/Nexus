@@ -27,7 +27,7 @@ Task Force Ship Listing
 		<span class='font_small'>{{ $ship->registry }}</span></center>
 
 	<table class='table100'>
-		<tr><td width='420px' rowspan='7'>{{ HTML::image('assets/uploads/ships/'.$ship->image) }}</td>
+		<tr><td width='50%' align='center' rowspan='7'>{{ HTML::image('assets/uploads/ships/'.$ship->image) }}</td>
 
 		<tr style='font-size:0.8em;'><td width='170px'>Task Force</td><td colspan='2'>{{ $ship->taskforce->name }}</td></tr>
 		<tr style='font-size:0.8em;'><td width='170px'>Task Group</td><td colspan='2'>{{ $ship->taskgroup->alias }}</td></tr>
