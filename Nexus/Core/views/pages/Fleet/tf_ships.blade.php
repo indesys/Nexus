@@ -49,14 +49,17 @@ Task Force Ship Listing
 	<br />
 	<table class='table100'>
 		@if ($ship->commanding_officer == NULL)
-			<tr><td colspan='2' width='50%' align='center'>Commanding Officer</td><td colspan='2'>&nbsp;</td></tr>
-			<tr><td>{{ HTML::image('assets/uploads/ranks/ds9/b-blank1.png') }}</td><td><font style='color:#fc0;'>Open Command!</font></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+			<tr><td width='50%' align='center'><strong>Commanding Officer</strong></td><td>&nbsp;</td></tr>
+			<tr><td width='50%' align='center'>{{ HTML::image('assets/uploads/ranks/ds9/b-blank1.png') }}</td></tr>
+			<tr><td align='center'><font style='color:#fc0;'>Open Command!</font></td><td>&nbsp;</td><td>&nbsp;</td></tr>
 		@elseif ($ship->commanding_officer != NULL && $ship->executive_officer == NULL)
-			<tr><td colspan='2' width='50%' align='center'>Commanding Officer</td><td colspan='2' align='center'>Executive Officer</td></tr>
-			<tr><td width=''>{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->co->rank->image) }}</td><td>{{ $ship->co->rank->name ." ". $ship->co->name }}</td><td colspan='2' style='color:#f30; text-align:center;'>No XO has been assigned yet.</td></tr>
+			<tr><td width='50%' align='center'><strong>Commanding Officer</strong></td><td align='center'><strong>Executive Officer</strong></td></tr>
+			<tr><td width='50%' align='center'>{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->co->rank->image) }}</td><td rowspan='2' style='color:#f30; text-align:center;'>No XO has been assigned yet.</td></tr>
+			<tr><td align='center'>{{ $ship->co->rank->name ." ". $ship->co->name }}</td></tr>
 		@else ($ship->commanding_officer != NULL && $ship->executive_officer == NULL)
-			<tr><td colspan='2' width='50%' align='center'>Commanding Officer</td><td colspan='2' align='center'>Executive Officer</td></tr>
-			<tr><td>{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->co->rank->image) }}</td><td>{{ $ship->co->rank->name ." ". $ship->co->name }}</td><td>{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->xo->rank->image) }}</td><td>{{ $ship->xo->rank->name ." ". $ship->xo->name }}</td></tr>
+			<tr><td width='50%' align='center'><strong>Commanding Officer</strong></td><td align='center'><strong>Executive Officer</strong></td></tr>
+			<tr><td align='center'>{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->co->rank->image) }}</td><td align='center'>{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->xo->rank->image) }}</td></tr>
+			<tr><td align='center'>{{ $ship->co->rank->name ." ". $ship->co->name }}</td><td align='center'>{{ $ship->xo->rank->name ." ". $ship->xo->name }}</td></tr>
 		@endif
 	</table>
 	<br />
