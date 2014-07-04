@@ -2,48 +2,60 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>@yield('title') &middot; Nexus Fleet Management</title>
+        <title>@yield('title') &bull; Nexus Fleet Management</title>
+        <meta name="viewport" content="width=device-width">
 
+        <!--[if lt IE 9]>
+            {{ HTML::script('assets/js/html5shiv.js') }}
+		<![endif]-->
+
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,300,700">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Exo+2:200,400,600">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         {{ HTML::style('assets/css/main.css') }}
+        {{ HTML::style('assets/css/bootstrap-changes.css') }}
+        @yield('styles')
     </head>
     <body>
-        <!-- MAIN CONTAINER -->
-        <div id="container">
+        <div class="container">
+            <header>
+                {{ HTML::image('assets/images/site-banner.jpg', 'Fleet Banner') }}
+            </header>
 
-        <!-- MAIN HEADER -->
-        <div id="headwrapper">
-            {{ HTML::image('assets/images/site-banner.jpg', 'Fleet Banner') }}
-        </div>
+            @include('partials.nav-main')
 
-        <!-- MENU UNDER HEADER -->
-        <div id="main_nav">
-            @include('partials.mainnav')
-        </div>
-
-        <!-- MAIN CONTENT DISPLAY -->
-            <div id="main_body">
-                <div class="sub_nav">
+            <div class="row">
+                <div class="col-lg-2">
                     @if ($page_class)
-                        @include('partials.subnav')
+                        @include('partials.nav-sub')
                     @else
-                        {{'The page class has not been set.'}}
+                        <p class="alert alert-warning">The page class has not been set!</p>
                     @endif
                 </div>
-                <div class="command_menu">
-                    Command Menu/Login
+                <div class="col-lg-8">
+                    <section>
+                        @yield('body')
+                    </section>
                 </div>
-                <div class="content">
-                    @yield('body')
-                </div>
-            </div>
-
-            <!-- FOOTER -->
-            <div id="footer">
-                <div class="copyright">
-                    &copy;{{ date('Y') }} &nbsp;all rights reserved&nbsp;|&nbsp;Powered by {{ HTML::image('assets/images/poweredby.jpg', 'Nexus Fleet System') }}&nbsp;|&nbsp;{{ HTML::linkAction('credits','Site Credits') }}
+                <div class="col-lg-2">
+                    @include('partials.nav-command')
                 </div>
             </div>
 
-        </div> <!-- END MAIN CONTAINER -->
+            <footer>
+                &copy;{{ date('Y') }} All Rights Reserved |
+                Powered by {{ HTML::image('assets/images/poweredby.jpg', 'Nexus Fleet System') }} |
+                {{ HTML::linkAction('credits','Site Credits') }}
+            </footer>
+        </div>
+
+        <!--[if lt IE 9]>
+			<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+		<![endif]-->
+		<!--[if gte IE 9]><!-->
+			<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+		<!--<![endif]-->
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        @yield('scripts')
     </body>
 </html>

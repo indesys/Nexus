@@ -1,0 +1,14 @@
+blockquote {
+    border-color: #333;
+    font-family: "bodyFont";
+}
+
+blockquote footer {
+    padding: 5px 0;
+
+    text-align: left;
+}
+
+hr {
+    border-color: #222;
+}
