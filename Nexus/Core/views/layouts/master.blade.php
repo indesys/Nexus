@@ -25,20 +25,20 @@
             @include('partials.nav-main')
 
             <div class="row">
-                <div class="col-lg-2">
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
                     @if ($page_class)
                         @include('partials.nav-sub')
                     @else
                         <p class="alert alert-warning">The page class has not been set!</p>
                     @endif
                 </div>
-                <div class="col-lg-8">
+                <div class="col-xs-12 col-sm-6 col-md-3 col-md-push-6 col-lg-2 col-lg-push-8">
+                    @include('partials.nav-command')
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-md-pull-3 col-lg-8 col-lg-pull-2">
                     <section>
                         @yield('body')
                     </section>
-                </div>
-                <div class="col-lg-2">
-                    @include('partials.nav-command')
                 </div>
             </div>
 
