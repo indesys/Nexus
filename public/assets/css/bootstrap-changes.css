@@ -12,3 +12,7 @@ blockquote footer {
 hr {
     border-color: #222;
 }
+
+.text-muted {
+    color: #555;
+}

@@ -1,3 +1,5 @@
+@import url("data-table.css");
+
 @font-face {
 	font-family: bodyFont;
 	src: url('../fonts/play.woff');
@@ -77,6 +79,7 @@ nav.nav-main a:hover {
 }
 
 nav.nav-sub {
+	margin-bottom: 15px;
 	padding: 10px;
 
 	font-size: 14px;
@@ -118,8 +121,6 @@ h1, h2, h3 {
 	color: #fb0;
 }
 h1 {
-	margin-top: 0;
-
 	font-family: "Exo 2";
 	font-weight: 200;
 }
