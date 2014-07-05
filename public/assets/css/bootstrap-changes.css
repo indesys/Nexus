@@ -1,6 +1,6 @@
 blockquote {
     border-color: #333;
-    font-family: "bodyFont";
+    font-family: "bodyFont", "Lato", helvetica, arial, sans-serif;
 }
 
 blockquote footer {

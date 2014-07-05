@@ -1,10 +1,5 @@
 @import url("data-table.css");
 
-@font-face {
-	font-family: bodyFont;
-	src: url('../fonts/play.woff');
-}
-
 html, body {
 	background: #000;
 	font-family: "Lato", helvetica, arial, sans-serif;
@@ -27,7 +22,7 @@ nav.nav-main {
 	border: 1px solid #222;
 	font-weight: bold;
 	text-transform: uppercase;
-	font-family: "bodyFont";
+	font-family: "Lato", helvetica, arial, sans-serif;
 
 	border-radius: 3px;
 }
@@ -82,10 +77,10 @@ nav.nav-sub {
 	margin-bottom: 15px;
 	padding: 10px;
 
-	font-size: 14px;
+	font-size: 0.9em;
 	border: 1px solid #222;
 	background: #111;
-	font-family: "bodyFont";
+	font-family: "Lato", helvetica, arial, sans-serif;
 
 	border-radius: 3px;
 }
@@ -111,21 +106,14 @@ footer {
 	padding: 20px 0;
 
 	text-align: center;
-	font-size: 14px;
+	font-size: 0.8em;
 	color: #555;
-	font-family: "bodyFont";
+	font-family: "Lato", helvetica, arial, sans-serif;
 }
 
 h1, h2, h3 {
-	font-family: "bodyFont";
+	font-family: "Exo 2", "Lato", helvetica, arial, sans-serif;
 	color: #fb0;
-}
-h1 {
-	font-family: "Exo 2";
-	font-weight: 200;
-}
-h2 {
-	font-weight: 400;
 }
 
 a:link, a:visited {
@@ -137,5 +125,5 @@ a:hover, a:active {
 }
 
 .text-small {
-	font-size: 13px;
+	font-size: 0.8em;
 }

@@ -1,9 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-
-Task Force Ship Listing
-
+	Task Force Ship Listing
 @stop
 
 
@@ -23,52 +21,66 @@ Task Force Ship Listing
 <p>The ships in this task force are listed below.</p>
 
 @foreach ($tf->ships as $ship)
-		<center><span style='font-size:1.3em; font-weight:bold;'>{{ HTML::link($ship->url,$ship->name) }}</span><br />
-		<span class='font_small'>{{ $ship->registry }}</span></center>
+	<div class="data-table"><div class="row"><br />
+		<div class="col-xs-12"><center><span style='font-size:1.3em; font-weight:bold;'>{{ HTML::link($ship->url,$ship->name) }}</span><br />
+		<span class='text-small'>{{ $ship->registry }}</span></center></div>
 
-	<table class='table100'>
-		<tr><td width='50%' align='center' rowspan='7'>{{ HTML::image('assets/uploads/ships/'.$ship->image) }}</td>
+		<div class="col-md-6 col-lg-7">{{ HTML::image('assets/uploads/ships/'.$ship->image) }}</div>
 
-		<tr style='font-size:0.8em;'><td width='170px'>Task Force</td><td colspan='2'>{{ $ship->taskforce->name }}</td></tr>
-		<tr style='font-size:0.8em;'><td width='170px'>Task Group</td><td colspan='2'>{{ $ship->taskgroup->alias }}</td></tr>
-		<tr style='font-size:0.8em;'><td width='170px'>Status:</td><td colspan='2'>{{ $ship->shipstatus->name }}</td></tr>
-		<tr style='font-size:0.8em;'><td width='170px'>Class:</td><td colspan='2'>{{ $ship->shipclass->name }}-class</td></tr>
+			<div class="col-md-6 col-lg-5 text-small">
+				<div class="col-xs-6">Task Force</div><div class="col-xs-6">{{ $ship->taskforce->name }}</div>
+				<div class="col-xs-6">Task Group</div><div class="col-xs-6">{{ $ship->taskgroup->alias }}</div>
+				<div class="col-xs-6">Status:</div><div class="col-xs-6">{{ $ship->shipstatus->name }}</div>
+				<div class="col-xs-6">Class:</div><div class="col-xs-6">{{ $ship->shipclass->name }}-class</div>
 
+			@if ($ship->commanding_officer == NULL)
+				<div class="col-xs-12">&nbsp;</div>
+			@else
+				<div class="col-xs-6">Total Crew:</div><div class="col-xs-6">{{ $ship->crew->count() }}</div>
+			@endif
+			
+			@if ($ship->commanding_officer == NULL)
+				<div class="col-xs-12">&nbsp;</div>
+			@else
+				<div class="col-xs-6">Simming Format:</div><div class="col-xs-6">Play by {{ $ship->format }}</div>
+			@endif
+			</div>
+	
+	<div class="col-xs-12" style="text-align:center;">&nbsp;</div>
 		@if ($ship->commanding_officer == NULL)
-			<tr style='font-size:0.8em;'><td colspan='3'>&nbsp;</td></tr>
-		@else
-			<tr style='font-size:0.8em;'><td width='170px'>Total Crew:</td><td colspan='2'>{{ $ship->crew->count() }}</td></tr>
-		@endif
-		
-		@if ($ship->commanding_officer == NULL)
-			<tr style='font-size:0.8em;'><td colspan='3'>&nbsp;</td></tr>
-		@else
-			<tr style='font-size:0.8em;'><td>Simming Format:</td><td colspan='2'>Play by {{ $ship->format }}</td></tr>
-		@endif
-	</table>
-	<br />
-	<table class='table100'>
-		@if ($ship->commanding_officer == NULL)
-			<tr><td width='50%' align='center'><strong>Commanding Officer</strong></td><td>&nbsp;</td></tr>
-			<tr><td width='50%' align='center'>{{ HTML::image('assets/uploads/ranks/ds9/b-blank1.png') }}</td></tr>
-			<tr><td align='center'><font style='color:#fc0;'>Open Command!</font></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+		<div class="col-xs-12" style="text-align:center;">
+			<div class="col-xs-6">
+				<div class="col-xs-12" style="font-size:1.1em;"><strong>Commanding Officer</strong></div>
+				<div class="col-xs-12">{{ HTML::image('assets/uploads/ranks/ds9/b-blank1.png') }}</div>
+			</div>
+				<div class="col-xs-6">&nbsp;</div>
+				<div class="col-xs-6"><font style="color:#fc0;">Open Command!</font></div>
+		</div>
 		@elseif ($ship->commanding_officer != NULL && $ship->executive_officer == NULL)
-			<tr><td width='50%' align='center'><strong>Commanding Officer</strong></td><td align='center'><strong>Executive Officer</strong></td></tr>
-			<tr><td width='50%' align='center'>{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->co->rank->image) }}</td><td rowspan='2' style='color:#f30; text-align:center;'>No XO has been assigned yet.</td></tr>
-			<tr><td align='center'>{{ $ship->co->rank->name ." ". $ship->co->name }}</td></tr>
+		<div class="col-xs-12" style="text-align:center;">
+			<div class="col-xs-6" style="font-size:1.1em;"><strong>Commanding Officer</strong></div><div class="col-xs-6" style="font-size:1.1em;"><strong>Executive Officer</strong></div>
+			<div class="col-xs-6">
+				<div class="col-xs-12">{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->co->rank->image) }}</div><div class="col-xs-12">{{ $ship->co->rank->name ." ". $ship->co->name }}</div>
+			</div>
+				<div class="col-xs-6" style="color:#f30;">No XO has been assigned yet.</div>
+		</div>
 		@else ($ship->commanding_officer != NULL && $ship->executive_officer == NULL)
-			<tr><td width='50%' align='center'><strong>Commanding Officer</strong></td><td align='center'><strong>Executive Officer</strong></td></tr>
-			<tr><td align='center'>{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->co->rank->image) }}</td><td align='center'>{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->xo->rank->image) }}</td></tr>
-			<tr><td align='center'>{{ $ship->co->rank->name ." ". $ship->co->name }}</td><td align='center'>{{ $ship->xo->rank->name ." ". $ship->xo->name }}</td></tr>
+		<div class="col-xs-12" style="text-align:center;">
+			<div class="col-xs-6" style="font-size:1.1em;"><strong>Commanding Officer</strong></div><div class="col-xs-6" style="font-size:1.1em;"><strong>Executive Officer</strong></div>
+			<div class="col-xs-6">{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->co->rank->image) }}</div><div class="col-xs-6">{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->xo->rank->image) }}</div>
+			<div class="col-xs-6">{{ $ship->co->rank->name ." ". $ship->co->name }}</div><div class="col-xs-6">{{ $ship->xo->rank->name ." ". $ship->xo->name }}</div>
+		</div>
 		@endif
-	</table>
-	<br />
-		<center>{{ $ship->intro }}</center>
-	<br />
-	<hr>
-	<br />
+
+		<div class="col-xs-12" style="text-align:center;">{{ $ship->intro }}</div>
+	</div></div>
+
 
 @endforeach
+	
+	<div class="data-table"><div class="row"><br />
+		<div class="col-xs-12" style="text-align:center;">Done Searching - EOF</div>
+	</div></div>
 
 @endif
 
