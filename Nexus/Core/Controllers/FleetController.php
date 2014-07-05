@@ -64,12 +64,12 @@ class FleetController extends BaseController {
 	public function command_staff()
     {
 		// Retrieve all the details of the fleet departments
-		$departments = DepartmentModel::where('admin','=','1')
-			->orderBy('sequence', 'ASC')
+		$departments = DepartmentModel::admin()
+			->orderBy('sequence', 'asc')
 			->get();
 
 		return View::make('pages.fleet.command_staff')
-			->with('departments',$departments);
+			->with('departments', $departments);
     }
 
 	public function rules()
