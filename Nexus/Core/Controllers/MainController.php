@@ -89,4 +89,9 @@ class MainController extends BaseController {
         # code...
     }
 
+    public function components()
+    {
+        return View::make('pages.Main.components');
+    }
+
 }
