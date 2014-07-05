@@ -10,7 +10,7 @@
 		<![endif]-->
 
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,300,700">
-        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Exo+2:200,400,600">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Exo+2:200,400,500,600">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         {{ HTML::style('assets/css/main.css') }}
         {{ HTML::style('assets/css/bootstrap-changes.css') }}
