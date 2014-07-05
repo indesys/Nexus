@@ -16,3 +16,70 @@ hr {
 .text-muted {
     color: #555;
 }
+
+.alert,
+.label {
+    border: none;
+
+    border-radius: 3px;
+}
+
+.badge {
+    font-family: "Lato", helvetica, arial, sans-serif;
+}
+
+.label.label-default,
+.btn.btn-default,
+.badge {
+    background: #666;
+    color: #fff;
+}
+
+.alert.alert-danger,
+.label.label-danger,
+.btn.btn-danger {
+    background: #e00;
+    color: #fff;
+}
+.alert.alert-warning,
+.label.label-warning,
+.btn.btn-warning {
+    background: #fb0;
+    color: #111;
+}
+.alert.alert-success,
+.label.label-success,
+.btn.btn-success {
+    background: #080;
+    color: #fff;
+}
+.alert.alert-info,
+.label.label-info,
+.btn.btn-info {
+    background: #29c;
+    color: #fff;
+}
+
+.btn {
+    border: none;
+
+    border-radius: 3px;
+}
+.btn.btn-primary {}
+.btn.btn-info:hover {
+    background: #29c;
+    color: #fff;
+}
+
+.text-info, .text-info:hover {
+    color: #29c;
+}
+.text-success, .text-success:hover {
+    color: #080;
+}
+.text-warning, .text-warning:hover {
+    color: #fb0;
+}
+.text-danger, .text-danger:hover {
+    color: #e00;
+}

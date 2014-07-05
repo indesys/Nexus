@@ -1,10 +1,11 @@
 <?php
 
+Route::get('main/components', 'Nexus\Core\Controllers\MainController@components');
+
 /*
 |--------------------------------------------------------------------------
 | Routes for the "Main" section
 |--------------------------------------------------------------------------
-|
 */
 
 Route::get('/', [
