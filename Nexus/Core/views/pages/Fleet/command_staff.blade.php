@@ -7,7 +7,7 @@
 @section('body')
     <h1>Command Staff</h1>
 
-    <p>This page features the senior command personnel of the fleet.  Positions listed in <span class="text-highlight">blue</span>, are fleet council positions.</p>
+    <p>This page features the senior command personnel of the fleet.  Positions listed in <span class="text-info">blue</span>, are fleet council positions.</p>
 
     @foreach ($departments as $dept)
         <h2>{{ $dept->name }}</h2>
@@ -18,7 +18,7 @@
                 @foreach ($position->characters as $character)
                     <div class="row">
                         <div class="col-sm-5 col-lg-5">
-                            <?php $class = ((bool) $position->admin) ? ' class="text-highlight"' : '';?>
+                            <?php $class = ((bool) $position->admin) ? ' class="text-info"' : '';?>
                             <p{{ $class }}>{{ $position->name }}</p>
                         </div>
                         <div class="col-xs-6 col-sm-3 col-md-6 col-lg-3">
@@ -32,7 +32,7 @@
             @else
                 <div class="row">
                     <div class="col-sm-5 col-lg-5">
-                        <?php $class = ((bool) $position->admin) ? ' class="text-highlight"' : '';?>
+                        <?php $class = ((bool) $position->admin) ? ' class="text-info"' : '';?>
                         <p{{ $class }}>{{ $position->name }}</p>
                     </div>
                     <div class="col-xs-6 col-sm-3 col-md-6 col-lg-3">
