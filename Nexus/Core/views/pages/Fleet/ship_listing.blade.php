@@ -1,11 +1,8 @@
 @extends('layouts.master')
 
 @section('title')
-
-Ship Listing Options
-
+	Ship Listing Options
 @stop
-
 
 
 @section('body')
