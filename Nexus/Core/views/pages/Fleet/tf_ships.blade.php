@@ -54,7 +54,7 @@
 				<div class="col-xs-12">{{ HTML::image('assets/uploads/ranks/ds9/b-blank1.png') }}</div>
 			</div>
 				<div class="col-xs-6">&nbsp;</div>
-				<div class="col-xs-6"><font style="color:#fc0;">Open Command!</font></div>
+				<div class="col-xs-6 text-highlight-orange">Open Command!</div>
 		</div>
 		@elseif ($ship->commanding_officer != NULL && $ship->executive_officer == NULL)
 		<div class="col-xs-12" style="text-align:center;">
@@ -62,7 +62,7 @@
 			<div class="col-xs-6">
 				<div class="col-xs-12">{{ HTML::image('assets/uploads/ranks/ds9/'.$ship->co->rank->image) }}</div><div class="col-xs-12">{{ $ship->co->rank->name ." ". $ship->co->name }}</div>
 			</div>
-				<div class="col-xs-6" style="color:#f30;">No XO has been assigned yet.</div>
+				<div class="col-xs-6 text-highlight-red">No XO has been assigned yet.</div>
 		</div>
 		@else ($ship->commanding_officer != NULL && $ship->executive_officer == NULL)
 		<div class="col-xs-12" style="text-align:center;">
@@ -79,7 +79,7 @@
 @endforeach
 	
 	<div class="data-table"><div class="row"><br />
-		<div class="col-xs-12" style="text-align:center;">Done Searching - EOF</div>
+		<div class="col-xs-12" style="text-align:center;">End of File... Search Complete</div>
 	</div></div>
 
 @endif

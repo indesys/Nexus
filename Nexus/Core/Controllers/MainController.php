@@ -81,12 +81,14 @@ class MainController extends BaseController {
 
     public function contact()
     {
-        # code...
+        // Make the View
+        return View::make('pages.main.contact');
     }
 
     public function join()
     {
-        # code...
+        // Make the View
+        return View::make('pages.main.join');
     }
 
     public function components()

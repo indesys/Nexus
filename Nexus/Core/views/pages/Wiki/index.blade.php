@@ -1,11 +1,8 @@
 @extends('layouts.master')
 
 @section('title')
-
-Database
-
+	Database
 @stop
-
 
 
 @section('body')

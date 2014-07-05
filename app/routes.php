@@ -31,6 +31,10 @@ Route::group(['prefix' => 'main', 'namespace' => 'Nexus\Core\Controllers'], func
 		'as' => 'join',
 		'uses' => 'MainController@join'
 	]);
+	Route::get('contact', [
+		'as' => 'contact',
+		'uses' => 'MainController@contact'
+	]);
 	Route::get('credits', [
 		'as' => 'credits',
 		'uses' => 'MainController@credits'
@@ -73,6 +77,10 @@ Route::group(['prefix' => 'fleet', 'namespace' => 'Nexus\Core\Controllers'], fun
 	Route::get('command_staff', [
 		'as' => 'command_staff',
 		'uses' => 'FleetController@command_staff'
+	]);
+	Route::get('open_positions', [
+		'as' => 'opl',
+		'uses' => 'FleetController@opl'
 	]);
 });
 

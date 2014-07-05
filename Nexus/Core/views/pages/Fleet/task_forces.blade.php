@@ -1,11 +1,8 @@
 @extends('layouts.master')
 
 @section('title')
-
-Task Forces
-
+	Task Forces
 @stop
-
 
 
 @section('body')
@@ -14,13 +11,13 @@ Task Forces
 
 <p>The pride of the fleet, this is a listing of all the active task forces in the fleet.</p>
 
-<table class="table100">
+<div class="data-table" style="text-align:center;">
 	@foreach ($task_forces as $tf)
-		<tr><td align="center">{{ $tf->name ." - ". $tf->alias }}</td></tr>
-		<tr><td align="center">{{ HTML::image('assets/uploads/taskforce/'.$tf->image) }}</td></tr>
-		<tr><td align="center" style="font-size:0.8em;">{{ HTML::link($tf->url) }}</td></tr>
-		<tr><td>&nbsp;</td></tr>
+		<div class="col-sm-12 col-lg-12">{{ $tf->name ." - ". $tf->alias }}</div>
+		<div class="col-sm-12 col-lg-12">{{ HTML::image('assets/uploads/taskforce/'.$tf->image) }}</div>
+		<div class="col-sm-12 col-lg-12" style="font-size:0.8em;">{{ HTML::link($tf->url) }}</div>
+		<div class="col-sm-12 col-lg-12">&nbsp;</div>
 	@endforeach
-</table>
+</div>
 
 @stop

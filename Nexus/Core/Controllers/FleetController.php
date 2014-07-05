@@ -5,7 +5,8 @@ use BaseController,
 	Request,
 	MessageModel,
 	TaskForceModel,
-	DepartmentModel;
+	DepartmentModel,
+	PositionModel;
 
 class FleetController extends BaseController {
 
@@ -90,6 +91,17 @@ class FleetController extends BaseController {
 
 		return View::make('pages.fleet.task_forces')
 			->with('task_forces',$task_forces);
+    }
+
+	public function opl()
+    {
+		// Retrieve all the task forces minus the surplus depot holding bay
+		$positions = PositionModel::where('admin','!=','1')
+			->orderBy('name','ASC')
+			->get();
+
+		return View::make('pages.fleet.opl')
+			->with('positions',$positions);
     }
 
 }
