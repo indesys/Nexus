@@ -62,12 +62,18 @@ hr {
 
 .btn {
     border: none;
+    font-family: "Exo 2";
+    font-weight: 500;
 
     border-radius: 3px;
 }
 .btn.btn-primary {}
 .btn.btn-info:hover {
     background: #29c;
+    color: #fff;
+}
+.btn.btn-default:hover {
+    background: #777;
     color: #fff;
 }
 

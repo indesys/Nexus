@@ -111,9 +111,15 @@ footer {
 	font-family: "Lato", helvetica, arial, sans-serif;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
 	font-family: "Exo 2", "Lato", helvetica, arial, sans-serif;
 	color: #fb0;
+}
+h2 {
+	color: #FF4B20;
+}
+h3, h4 {
+	color: #6FBEE1;
 }
 
 a:link, a:visited {
