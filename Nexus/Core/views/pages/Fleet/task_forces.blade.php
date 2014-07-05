@@ -4,20 +4,19 @@
 	Task Forces
 @stop
 
-
 @section('body')
+	<h1>Task Forces</h1>
 
-<h1>Task Forces</h1>
-
-<p>The pride of the fleet, this is a listing of all the active task forces in the fleet.</p>
-
-<div class="data-table" style="text-align:center;">
 	@foreach ($task_forces as $tf)
-		<div class="col-sm-12 col-lg-12">{{ $tf->name ." - ". $tf->alias }}</div>
-		<div class="col-sm-12 col-lg-12">{{ HTML::image('assets/uploads/taskforce/'.$tf->image) }}</div>
-		<div class="col-sm-12 col-lg-12" style="font-size:0.8em;">{{ HTML::link($tf->url) }}</div>
-		<div class="col-sm-12 col-lg-12">&nbsp;</div>
+		<div class="text-center">
+			<h3>{{ $tf->name ." - ". $tf->alias }}</h3>
+			<p>{{ HTML::image('assets/uploads/taskforce/'.$tf->image) }}</p>
+			<p>
+				<a href="{{ $tf->url }}" class="btn btn-default">Task Force Website</a>
+				&nbsp;&nbsp;
+				<a href="{{ route('tf_ships', [$tf->id]) }}" class="btn btn-default">Task Force Ships</a>
+			</p>
+			<hr>
+		</div>
 	@endforeach
-</div>
-
 @stop
