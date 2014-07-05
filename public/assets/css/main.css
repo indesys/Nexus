@@ -22,7 +22,7 @@ nav.nav-main {
 	border: 1px solid #222;
 	font-weight: bold;
 	text-transform: uppercase;
-	font-family: "Lato", helvetica, arial, sans-serif;
+	font-family: "Exo 2", "Lato", helvetica, arial, sans-serif;
 
 	border-radius: 3px;
 }
@@ -106,7 +106,7 @@ footer {
 	padding: 20px 0;
 
 	text-align: center;
-	font-size: 0.8em;
+	font-size: 0.7em;
 	color: #555;
 	font-family: "Lato", helvetica, arial, sans-serif;
 }
@@ -128,6 +128,14 @@ a:hover, a:active {
 	font-size: 0.8em;
 }
 
-.text-highlight {
+.text-highlight-blue {
 	color: #29c;
+}
+
+.text-highlight-orange {
+	color: #fa0;
+}
+
+.text-highlight-red {
+	color: #f30;
 }

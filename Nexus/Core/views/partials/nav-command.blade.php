@@ -1,3 +1,4 @@
 <nav class="nav-sub nav-command">
-    Command Menu/Log In
+    <p>Command Menu</p>
+    <p>Log In Form</p>
 </nav>
