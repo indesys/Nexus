@@ -8,7 +8,7 @@
 	@if ($tf)
 		<h1>{{ $tf->name ." - ". $tf->alias }} <small>Ship Listing</small></h1>
 
-		<div class="data-table data-table-striped data-table-bordered">
+		<div class="data-table data-table-bordered">
 		@foreach ($tf->ships as $ship)
 			{{ View::make('partials.ship')->with('ship', $ship) }}
 		@endforeach
