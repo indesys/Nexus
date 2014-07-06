@@ -23,18 +23,6 @@ class FleetController extends BaseController {
 		return View::make('pages.fleet.index');
     }
 
-	public function ships()
-    {
-		// Retrieve all the task forces minus the surplus depot holding bay
-		$task_forces = TaskForceModel::where('name','!=','Task Force 99')
-			->orderBy('name','ASC')
-			->get();
-
-		// Make the View
-		return View::make('pages.fleet.ship_listing')
-			->with('task_forces', $task_forces);
-    }
-
 	public function tf_ships($id)
     {
 		if (is_numeric(Request::segment(3))) {
